@@ -1,0 +1,2169 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+$mainColor: rgb(245, 0, 87);
+$mainColorVeryLow: rgba(245, 0, 87, 0.1);
+$mainColorLow: rgba(245, 0, 87, 0.25);
+$mainColorMid: rgba(245, 0, 87, 0.4);
+$mainColorHigh: rgba(245, 0, 87, 0.8);
+// MIXIN DEL MODAL DE LOS JUEGOS
+@mixin gamesModal {
+  .gamesModal::-webkit-scrollbar {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    display: block !important;
+  }
+  .gamesModal::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background: $mainColorLow;
+  }
+  .gamesModal::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    height: 5px;
+    background: $mainColorMid;
+    opacity: 0.1;
+    //border: 0.05em solid #eeeeee;
+  }
+  .gamesModal::-webkit-scrollbar-thumb:hover {
+    background: $mainColorHigh;
+  }
+  .gamesModal::-webkit-scrollbar-thumb:active {
+    background: $mainColorHigh;
+  }
+  .gamesModal::-webkit-scrollbar-button {
+    height: 0px;
+    width: 0px;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:decrement {
+    height: 0px;
+    border-width: 0 7px 14px 7px;
+    border-color: transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:decrement:hover {
+    border-color: transparent transparent rgb(180, 180, 180) transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:increment {
+    height: 0px;
+    border-width: 14px 7px 0 7px;
+    border-color: rgba(40, 100, 40, 0) transparent transparent transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:increment:hover {
+    border-color: rgb(180, 180, 180) transparent transparent transparent;
+  }
+  .gamesModal {
+    margin-top: 115px;
+    height: 440px;
+    padding: 0px;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    background: transparent;
+    box-shadow: none;
+    $cardWidth: 238px;
+    $cardHeight: 360px;
+    $cardTop: -80px;
+    $cardMarginLeft: 24px;
+    $gameLabelBottom: 150px;
+    $gameLabelWidth: 150px;
+    $gameLabelBg: transparent;
+    $initialOpacity: 0.45;
+    $gameLabelLeft: 10%;
+    $cardsTransistion: 0.2s;
+    .cards-wrapper {
+      display: block;
+      margin: 0 auto !important;
+      height: inherit;
+      text-align: unset;
+      overflow-x: hidden;
+      .modal-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .gameCard {
+        display: inline-block;
+        position: relative;
+        margin-top: 40px;
+        margin-left: $cardMarginLeft;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 17.5px 0 $mainColorLow;
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover {
+          transition: $cardsTransistion;
+          box-shadow: 0 0 23px 0 $mainColorHigh;
+        }
+        div {
+          //card content
+          cursor: pointer;
+          position: absolute;
+          left: 0px;
+          width: $cardWidth;
+          height: $cardHeight;
+          opacity: $initialOpacity;
+          // background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+          filter: grayscale(50%);
+          &:hover {
+            filter: none;
+            opacity: 1;
+            transition: $cardsTransistion;
+            transform: scale(1.1);
+          }
+        }
+        label {
+          pointer-events: none;
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          text-align: center;
+          font-size: 16px;
+          font-family: 'Roboto';
+          width: $cardWidth;
+          height: 48px;
+          line-height: 48px;
+          color: white;
+          background: #111217;
+          z-index: 10000;
+          transition: $cardsTransistion;
+          border-top: solid 1px $mainColor;
+        }
+      }
+      /*
+        .fifa20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+            filter: grayscale(50%);
+            background-position: 50% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+
+            };
+          };
+          .fifa20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      */
+      /*
+      .fifa20-card-box{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .fifa20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+            filter: grayscale(50%);
+            background-position: 50% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+
+            };
+          };
+          .fifa20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+  
+      .pes20-card-box{
+        position: absolute;
+        top: 40px;
+        left: 298px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .pes20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587138144/Statics_images/askzyevsn33ehjzzrc2f.jpg');
+            filter: grayscale(50%);
+            background-position: 40% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .pes20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+  
+      .lol-card-box{
+        position: absolute;
+        top: 40px;
+        left: 556px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .lol-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/c_fill,w_550/v1588961038/Statics_images/xqufmmebfe8gj0wwkpzd.png');
+            filter: grayscale(50%);
+            background-position: 20% 10%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .lol-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      .mobileL-card-box{
+        position: absolute;
+        top: 40px;
+        left: 814px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .mobileL-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587133704/Statics_images/fqms2d3c4ylfnxxxwc0j.jpg');
+            filter: grayscale(50%);
+            background-position: 35% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .mobileL-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      */
+      .card-hover {
+        opacity: 1;
+        transition: $cardsTransistion;
+      }
+    }
+  }
+}
+
+@mixin gamesModal-cel {
+  .gamesModal::-webkit-scrollbar {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    display: block !important;
+  }
+  .gamesModal::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background: $mainColorLow;
+  }
+  .gamesModal::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    height: 5px;
+    background: $mainColorMid;
+    opacity: 0.1;
+    //border: 0.05em solid #eeeeee;
+  }
+  .gamesModal::-webkit-scrollbar-thumb:hover {
+    background: $mainColorHigh;
+  }
+  .gamesModal::-webkit-scrollbar-thumb:active {
+    background: $mainColorHigh;
+  }
+  .gamesModal::-webkit-scrollbar-button {
+    height: 0px;
+    width: 0px;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:decrement {
+    height: 0px;
+    border-width: 0 7px 14px 7px;
+    border-color: transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:decrement:hover {
+    border-color: transparent transparent rgb(180, 180, 180) transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:increment {
+    height: 0px;
+    border-width: 14px 7px 0 7px;
+    border-color: rgba(40, 100, 40, 0) transparent transparent transparent;
+  }
+  .gamesModal::-webkit-scrollbar-button:vertical:increment:hover {
+    border-color: rgb(180, 180, 180) transparent transparent transparent;
+  }
+  .gamesModal {
+    margin-top: 0px;
+    height: 360px;
+    padding: 0px;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    background: transparent;
+    box-shadow: none;
+    $cardWidth: 200px;
+    $cardHeight: 125px;
+    $cardTop: -80px;
+    $cardMarginLeft: 24px;
+    $gameLabelBottom: 150px;
+    $gameLabelWidth: 150px;
+    $gameLabelBg: transparent;
+    $initialOpacity: 0.45;
+    $gameLabelLeft: 10%;
+    $cardsTransistion: 0.2s;
+    width: 90% !important;
+    .cards-wrapper {
+      display: block;
+      margin: 0 auto !important;
+      height: auto !important;
+      text-align: unset;
+      overflow-x: scroll;
+      width: inherit !important;
+      .gameCard {
+        display: block;
+        position: relative;
+        //margin-top: 40px;
+        margin: 20px auto;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: 49px;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 17.5px 0 $mainColorLow;
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover {
+          transition: $cardsTransistion;
+          box-shadow: 0 0 23px 0 $mainColorHigh;
+        }
+        div {
+          //card content
+          cursor: pointer;
+          position: absolute;
+          left: 0px;
+          width: $cardWidth;
+          height: $cardHeight;
+          opacity: $initialOpacity;
+          // background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+          filter: grayscale(50%);
+          &:hover {
+            filter: none;
+            opacity: 1;
+            transition: $cardsTransistion;
+            transform: scale(1.1);
+          }
+        }
+        label {
+          pointer-events: none;
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          text-align: center;
+          font-size: 16px;
+          font-family: 'Roboto';
+          width: $cardWidth;
+          height: 48px;
+          line-height: 48px;
+          color: white;
+          background: #111217;
+          z-index: 10000;
+          transition: $cardsTransistion;
+          border-top: solid 1px $mainColor;
+        }
+      }
+      /*
+        .fifa20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+            filter: grayscale(50%);
+            background-position: 50% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+
+            };
+          };
+          .fifa20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      */
+      /*
+      .fifa20-card-box{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .fifa20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587136513/Statics_images/nmzwhkklfs4hxzstxz0h.jpg');
+            filter: grayscale(50%);
+            background-position: 50% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+
+            };
+          };
+          .fifa20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+  
+      .pes20-card-box{
+        position: absolute;
+        top: 40px;
+        left: 298px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .pes20-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587138144/Statics_images/askzyevsn33ehjzzrc2f.jpg');
+            filter: grayscale(50%);
+            background-position: 40% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .pes20-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+  
+      .lol-card-box{
+        position: absolute;
+        top: 40px;
+        left: 556px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .lol-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/c_fill,w_550/v1588961038/Statics_images/xqufmmebfe8gj0wwkpzd.png');
+            filter: grayscale(50%);
+            background-position: 20% 10%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .lol-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      .mobileL-card-box{
+        position: absolute;
+        top: 40px;
+        left: 814px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 0 15px 0 rgba(33, 36, 51, 0.25);
+        width: $cardWidth;
+        height: $cardHeight;
+        transition: $cardsTransistion;
+        background: #212433;
+        border-radius: 6px;
+        box-shadow: 0 0 40px 0 rgba(255,191,0, 0.25);
+        border: solid 1px $mainColor;
+        background-color: rgba(1, 1, 1, 1);
+        z-index: 1500;
+        &:hover{
+          transition: $cardsTransistion;
+          box-shadow: 0 0 40px 0 rgba(255,191,0, 0.5);
+        };
+        .mobileL-card{
+            cursor: pointer;
+            position: absolute;
+            left: 0px;
+            width: $cardWidth;
+            height: $cardHeight;
+            opacity: $initialOpacity;
+            background: url('https://res.cloudinary.com/versus/image/upload/v1587133704/Statics_images/fqms2d3c4ylfnxxxwc0j.jpg');
+            filter: grayscale(50%);
+            background-position: 35% 20%;
+            &:hover{
+              filter: none;
+              opacity: 1;
+              transition: $cardsTransistion;
+              transform: scale(1.1);
+            };
+          };
+          .mobileL-label{
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Roboto';
+            width: $cardWidth;
+            height: 48px;
+            line-height: 48px;
+            color: white;
+            background: #111217;
+            z-index: 10000;
+            transition: $cardsTransistion;
+            border-top: solid 1px $mainColor;
+          };
+      };
+      */
+      .card-hover {
+        opacity: 1;
+        transition: $cardsTransistion;
+      }
+    }
+  }
+}
+
+html::selection {
+  background-color: rgba(251, 32, 98, 0.25) !important;
+}
+html::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+html::-webkit-scrollbar-track {
+  height: 0px;
+  width: 0px;
+}
+html::-webkit-scrollbar-thumb {
+  height: 0px;
+  width: 0px;
+}
+html::-webkit-scrollbar-button {
+  height: 0px;
+  width: 0px;
+}
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+// MIXIN DE LOS BOTONES
+@mixin lowGradeButton {
+  background-color: #111217;
+  border: solid 2px $mainColor;
+  border-radius: 6px;
+  color: white;
+}
+@mixin highGradeButton {
+  background-color: $mainColor;
+  border: solid 2px $mainColor;
+  border-radius: 6px;
+  color: white;
+}
+@mixin buttonHover {
+  &:hover {
+    background-color: $mainColor;
+    color: white;
+    transition: 1s;
+  }
+}
+// LOCALS VARS
+$standarTransition: 1s;
+$maxWidth: 1136px;
+$widthMargin: 0px;
+$buttonsRadius: 6px;
+$navHeight: 68px;
+// Classic Template
+$classicFont: '$classicFont', sans-serif;
+$buttonsBorder: solid 2px $mainColor;
+$classicColor: $mainColor;
+$classicBottomColor: solid 1px $mainColor;
+$background-color: #212433;
+$marginAutoWidth: 0 auto;
+$viewIndex0: 0;
+$viewIndex1: 10;
+$viewIndex2: 20;
+$viewIndex3: 30;
+$openTransition: 0.5s;
+$imageUrl: 'https://res.cloudinary.com/versus/image/upload/v1600465691/Customers/CVT/rwbanrxfmdhxoolxjggj.jpg ';
+@mixin Copavenadotuerto-1280 {
+  $b-maxwidth: 1156px;
+  $b-minwidth: 768px;
+  $b-maxheight: auto;
+  $b-minheight: 1280px;
+  $b-mainVerticalMargin: 40px;
+  $b-childVerticalMargin: 40px;
+  .Copavenadotuerto-wrapper-image {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: inherit;
+    //min-height: $b-minheight !important;
+    background-image: url($imageUrl);
+    background-position: center;
+    background-position: 80% 0%;
+    z-index: 150 !important;
+    opacity: 0.35;
+  }
+  .Copavenadotuerto-wrapper-gradient {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight !important;
+    //max-height: $b-maxheight;
+    z-index: 200;
+    opacity: 1;
+    background-image: linear-gradient(
+      to top,
+      $mainColor 0%,
+      rgb(245, 0, 87) 35%, 
+      rgba(245, 0, 87, 0.2) 90%
+      );  
+    }
+  .Copavenadotuerto-wrapper {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    //min-height: $b-minheight !important;
+    //max-height: $b-maxheight;
+    z-index: 1000;
+    //background-color: rgba(17, 18, 23, 1);
+    .Copavenadotuerto-content {
+      position: relative;
+      margin: 0 auto !important;
+      width: 80%;
+      height: inherit;
+      //min-height: 1280px;
+      .nav-bar {
+        position: relative;
+        display: block; // Section Display
+        left: -10vw;
+        width: 100vw;
+        z-index: 1000;
+        height: 68px;
+        background-color: transparent;
+        .nav-bar-content {
+          position: relative;
+          width: 50%;
+          height: 68px;
+          margin: 0 auto;
+          font-family: $classicFont;
+          .app-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: $navHeight;
+            font-size: 35px;
+            cursor: pointer;
+            transition: $openTransition;
+            color: white;
+          }
+          .sponsor-footer-prod {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 150px !important;
+            height: 75px;
+            margin: 0 auto;
+            margin-top: 25px;
+            .sponsor-img {
+              cursor: pointer;
+              width: 150px;
+              height: 75px;
+              margin: 0px auto;
+              object-fit: fill
+            }
+            .es-prod{
+              cursor: pointer;
+              color: white;
+              position: absolute;
+              bottom: 20px;
+              right: 1px;
+            }
+          }
+          .app-menu-dropdown {
+            position: absolute !important;
+            background-color: $background-color;
+            border-radius: 6px;
+            width: 120px !important;
+            height: 60px !important;
+            z-index: 1000 !important;
+            top: 48px !important;
+            padding: 0px !important;
+            border: 0px 0px 1px 1px;
+            border-style: solid rgb(225, 225, 225);
+            box-shadow: 5px 5px 5px 0px rgba(225, 225, 225, 0.25);
+            .profile-button {
+              cursor: pointer;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 0px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              color: #2979ff;
+              border: 1px solid #2979ff;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 225, 225, 0.5);
+                transition: 0.5s;
+              }
+            }
+            .log-out {
+              cursor: pointer;
+              color: red;
+              border: 1px solid red;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 60px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 125, 125, 0.8);
+                transition: 0.5s;
+              }
+            }
+          }
+          .loading-img {
+            position: absolute;
+            margin: 0 auto !important;
+            right: 129.5px;
+            top: 33.5px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      .logo-align {
+        display: block;
+        width: 100%;
+        margin: 0 auto !important;
+        //margin-top: $b-childVerticalMargin !important;
+        max-width: $b-maxwidth;
+        text-align: center;
+        .vs-logo {
+          cursor: pointer;
+          display: inline-block;
+          width: 405px;
+          //max-width: $b-maxwidth;
+          //min-width: $b-minwidth;
+          height: 255px;
+          object-fit: contain;
+          text-align: center;
+        }
+      }
+      @include gamesModal;
+      .Copavenadotuerto-legend {
+        display: block;
+        z-index: -500;
+        margin: 0 auto !important;
+        margin-top: $b-childVerticalMargin !important;
+        margin-bottom: $b-mainVerticalMargin !important;
+        padding: 0;
+        width: $b-minwidth;
+        font-family: 'Roboto';
+        font-size: 30px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: -0.25px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .loading-img {
+        display: block;
+        margin: 0 auto;
+        //margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        width: 52px;
+        height: 52px;
+      }
+      .play-button {
+        display: none;
+        display: block;
+        margin: 0 auto;
+        width: $b-minwidth/2.25;
+        margin-bottom: $b-mainVerticalMargin;
+        height: 52px;
+        line-height: 52px;
+        border-radius: 6px;
+        border: solid 2px $mainColor;
+        background-color: #111217;
+        @include buttonHover;
+        .button-contenido {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          text-align: center;
+          vertical-align: middle;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+      .video-content {
+        position: absolute;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        top: 10%;
+        width: 100%;
+        z-index: 1000;
+        margin: 0 auto;
+        .video-align {
+          position: relative;
+          width: 800px;
+          margin: 0 auto !important;
+          .video-text {
+            font-size: 18px;
+            color: white;
+            font-family: $classicFont;
+          }
+          .sponsor-video {
+            position: relative;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+      .text-sponsor {
+        display: block;
+        margin: inherit;
+        margin-top: 20px;
+        height: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        z-index: 150000;
+      }
+      .sponsor-footer {
+        width: 1116px;
+        margin: 0 auto;
+        .sponsor-img {
+          cursor: pointer;
+          display: inline-block;
+          width: 240px;
+          height: 138.25px;
+          margin: 12px 12px;
+          object-fit: contain
+        }
+        .libre{
+          width: 300px;
+          height: 180px;
+        }
+        .parque{
+          width: 100%;
+        }
+        .unr {
+          cursor: pointer;
+          height: 200px;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+}
+@mixin Copavenadotuerto-768_1279 {
+  $b-maxwidth: 768px;
+  $b-minwidth: 426px;
+  $b-maxheight: auto;
+  $b-minheight: 1800px;
+  $b-mainVerticalMargin: 96px;
+  $b-childVerticalMargin: 48px;
+  .Copavenadotuerto-wrapper-image {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: inherit;
+    //min-height: $b-minheight !important;
+    background-image: url($imageUrl);
+    background-position: center;
+    background-position: 80% 0%;
+    z-index: 150 !important;
+    opacity: 0.35;
+  }
+  .Copavenadotuerto-wrapper-gradient {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight !important;
+    z-index: 200;
+    opacity: 1;
+    background-image: linear-gradient(
+      to top,
+      $mainColor 0%,
+      rgba(245, 0, 87, 1) 60.8%,
+      rgba(245, 0, 87, 0.2) 90%
+    );
+  }
+  .Copavenadotuerto-wrapper {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    overflow: none;
+    z-index: 1000;
+    .Copavenadotuerto-content {
+      position: relative;
+      margin: 0 auto !important;
+      width: 80%;
+      height: inherit;
+      min-height: 850px;
+      .nav-bar {
+        position: relative;
+        display: block; // Section Display
+        left: -10vw;
+        width: 100vw;
+        z-index: 1000;
+        height: 68px;
+        background-color: transparent;
+        .nav-bar-content {
+          position: relative;
+          width: 70%;
+          height: 68px;
+          margin: 0 auto;
+          font-family: $classicFont;
+          .app-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: $navHeight;
+            font-size: 35px;
+            cursor: pointer;
+            transition: $openTransition;
+            color: white;
+          }
+          .sponsor-footer-prod {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 150px !important;
+            height: 75px;
+            margin: 0 auto;
+            margin-top: 25px;
+            .sponsor-img {
+              cursor: pointer;
+              width: 135px;
+              height: 68.5px;
+              margin: 0px auto;
+              object-fit: fill;
+            }
+            .es-prod{
+              cursor: pointer;
+              color: white;
+              position: absolute;
+              bottom: 20px;
+              right: 15px;
+            }
+          }
+          .app-menu-dropdown {
+            position: absolute !important;
+            background-color: $background-color;
+            border-radius: 6px;
+            width: 120px !important;
+            height: 60px !important;
+            z-index: 1000 !important;
+            top: 48px !important;
+            padding: 0px !important;
+            border: 0px 0px 1px 1px;
+            border-style: solid rgb(225, 225, 225);
+            box-shadow: 5px 5px 5px 0px rgba(225, 225, 225, 0.25);
+            .profile-button {
+              cursor: pointer;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 0px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              color: #2979ff;
+              border: 1px solid #2979ff;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 225, 225, 0.5);
+                transition: 0.5s;
+              }
+            }
+            .log-out {
+              cursor: pointer;
+              color: red;
+              border: 1px solid red;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 60px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 125, 125, 0.8);
+                transition: 0.5s;
+              }
+            }
+          }
+          .loading-img {
+            position: absolute;
+            margin: 0 auto;
+            right: 83.5px;
+            top: 33.5px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      .logo-align {
+        display: block;
+        width: 100%;
+        margin: 0 auto !important;
+        max-width: $b-maxwidth;
+        text-align: center;
+        .vs-logo {
+          cursor: pointer;
+          display: inline-block;
+          width: 405px;
+          //max-width: $b-maxwidth;
+          //min-width: $b-minwidth;
+          height: 225px;
+          object-fit: fill;
+          text-align: center;
+        }
+      }
+      @include gamesModal;
+      .Copavenadotuerto-legend {
+        display: block;
+        z-index: -500;
+        margin: 0 auto !important;
+        margin-top: $b-childVerticalMargin !important;
+        margin-bottom: $b-childVerticalMargin  !important;
+        padding: 0;
+        width: $b-minwidth;
+        font-family: 'Roboto';
+        font-size: 30px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: -0.25px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .loading-img {
+        display: block;
+        margin: 0 auto;
+        margin-top: $b-childVerticalMargin ;
+        //margin-bottom: $b-childVerticalMargin ;
+        width: 52px;
+        height: 52px;
+      }
+      .play-button {
+        display: none;
+        display: block;
+        margin: 0 auto;
+        width: $b-minwidth/1.5;
+        height: 52px;
+        line-height: 52px;
+        border-radius: 6px;
+        border: solid 2px $mainColor;
+        background-color: #111217;
+        @include buttonHover;
+        .button-contenido {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          text-align: center;
+          vertical-align: middle;
+          color: #ffffff;
+        }
+      }
+      .video-content {
+        position: absolute;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        top: 255px;
+        width: 100%;
+        z-index: 1000;
+        margin: 0 auto;
+        .video-align {
+          position: relative;
+          width: 600px;
+          margin: 0 auto !important;
+          .video-text {
+            font-size: 18px;
+            color: white;
+            font-family: $classicFont;
+          }
+          .sponsor-video {
+            position: relative;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+      .text-sponsor {
+        display: block;
+        margin: inherit;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        height: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        z-index: 150000;
+      }
+      .sponsor-footer-prod {
+        display: none;
+        width: 275px !important;
+        margin: 0 auto;
+        .sponsor-img {
+          cursor: pointer;
+          width: 275px;
+          height: 145px;
+          margin: 0px auto;
+          object-fit: contain
+        }
+      }
+      .sponsor-footer {
+        width: 100%;
+        .sponsor-img {
+          cursor: pointer;
+          width: 265px;
+          height: 165px;
+          margin: 12px 12px;
+          object-fit: contain;
+        }
+        .unr {
+          cursor: pointer;
+          width: 287px;
+          height: 287px;
+        }
+      }
+    }
+  }
+}
+@mixin Copavenadotuerto-426_768 {
+  $b-maxwidth: 425px;
+  $b-minwidth: 300px;
+  $b-maxheight: auto;
+  $b-minheight: 2270px;
+  $b-mainVerticalMargin: 48px;
+  $b-childVerticalMargin: 24px;
+  .Copavenadotuerto-wrapper-image {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight;
+    max-height: $b-maxheight;
+    background-image: url($imageUrl);
+    background-position: center;
+    background-position: 80% 0%;
+    z-index: 150 !important;
+    opacity: 0.35;
+  }
+  .Copavenadotuerto-wrapper-gradient {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight;
+    //max-height: $b-maxheight;
+    z-index: 200;
+    opacity: 1;
+    background-image: linear-gradient(to top, $mainColor, rgba(0, 0, 0, 0));
+  }
+  .Copavenadotuerto-wrapper {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight;
+    max-height: $b-maxheight;
+    overflow: none;
+    z-index: 1000;
+    background-image: linear-gradient(
+      to top,
+      $mainColor 0%,
+      rgba(245, 0, 87, 1) 60.8%,
+      rgba(245, 0, 87, 0.2) 90%
+    );
+    .Copavenadotuerto-content {
+      position: relative;
+      margin: 0 auto !important;
+      width: 80%;
+      height: inherit;
+      min-height: 850px;
+      .nav-bar {
+        position: relative;
+        display: block; // Section Display
+        left: -10vw;
+        width: 100vw;
+        z-index: 1000;
+        height: 68px;
+        background-color: transparent;
+        .nav-bar-content {
+          position: relative;
+          width: 60%;
+          height: 68px;
+          margin: 0 auto;
+          font-family: $classicFont;
+          .app-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: $navHeight;
+            font-size: 35px;
+            cursor: pointer;
+            transition: $openTransition;
+            color: white;
+          }
+          .sponsor-footer-prod {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 150px !important;
+            height: 75px;
+            margin: 0 auto;
+            margin-top: 25px;
+            .sponsor-img {
+              cursor: pointer;
+              width: 108px;
+              height: 54.8px;
+              margin: 0px auto;
+              object-fit: fill
+            }
+            .es-prod{
+              font-size: 10px;
+              cursor: pointer;
+              color: white;
+              position: absolute;
+              bottom: 25px;
+              right: 41px;
+            }
+          }
+          .app-menu-dropdown {
+            position: absolute !important;
+            background-color: $background-color;
+            border-radius: 6px;
+            width: 120px !important;
+            height: 60px !important;
+            z-index: 1000 !important;
+            top: 48px !important;
+            padding: 0px !important;
+            border: 0px 0px 1px 1px;
+            border-style: solid rgb(225, 225, 225);
+            box-shadow: 5px 5px 5px 0px rgba(225, 225, 225, 0.25);
+            .profile-button {
+              cursor: pointer;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 0px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              color: #2979ff;
+              border: 1px solid #2979ff;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 225, 225, 0.5);
+                transition: 0.5s;
+              }
+            }
+            .log-out {
+              cursor: pointer;
+              color: red;
+              border: 1px solid red;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 60px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 125, 125, 0.8);
+                transition: 0.5s;
+              }
+            }
+          }
+          .loading-img {
+            position: absolute;
+            margin: 0 auto !important;
+            right: 54.5px;
+            top: 22px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      .logo-align {
+        display: block;
+        width: 100%;
+        margin: 0 auto !important;
+        //margin-top: $b-childVerticalMargin !important;
+        //max-width: $b-maxwidth;
+        text-align: center;
+        .vs-logo {
+          cursor: pointer;
+          display: inline-block;
+          width: 364.5px;
+          height: 229.5px;
+          object-fit: contain;
+          text-align: center;
+        }
+      }
+      @include gamesModal;
+      .Copavenadotuerto-legend {
+        display: block;
+        z-index: -500;
+        margin: 0 auto !important;
+        margin-top: $b-childVerticalMargin !important;
+        margin-bottom: $b-mainVerticalMargin !important;
+        padding: 0;
+        width: $b-minwidth;
+        font-family: 'Roboto';
+        font-size: 30px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: -0.25px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .loading-img {
+        display: block;
+        margin: 0 auto;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        width: 52px;
+        height: 52px;
+      }
+      .play-button {
+        display: none;
+        display: block;
+        margin: 0 auto;
+        width: $b-minwidth;
+        margin-bottom: $b-mainVerticalMargin;
+        height: 52px;
+        line-height: 52px;
+        border-radius: 6px;
+        border: solid 2px $mainColor;
+        background-color: #111217;
+        @include buttonHover;
+        .button-contenido {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          text-align: center;
+          vertical-align: middle;
+          color: #ffffff;
+        }
+      }
+      .video-content {
+        position: absolute;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        top: 220px;
+        width: 100%;
+        z-index: 1000;
+        margin: 0 auto;
+        .video-align {
+          position: relative;
+          width: 320px;
+          margin: 0 auto !important;
+          .video-text {
+            font-size: 18px;
+            color: white;
+            font-family: $classicFont;
+          }
+          .sponsor-video {
+            position: relative;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+      .text-sponsor {
+        display: block;
+        margin: inherit;
+        margin-top: $b-mainVerticalMargin;
+        height: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        z-index: 150000;
+      }
+      .sponsor-footer-prod {
+        display: none;
+        margin-top: 25px !important;
+        width: 250px !important;
+        margin: 0 auto;
+        .sponsor-img {
+          cursor: pointer;
+          width: 250px;
+          height: 130px;
+          margin: 0px auto;
+          object-fit: contain
+        }
+      }
+      .sponsor-footer {
+        display: block;
+        width: 256px;
+        margin: 0 auto;
+        .sponsor-img {
+          cursor: pointer;
+          width: 256px;
+          height: 138.25px;
+          object-fit: contain;
+        }
+        .unr {
+          cursor: pointer;
+          width: 155px !important;
+          height: 155px !important;
+        }
+      }
+    }
+  }
+}
+@mixin Copavenadotuerto-425 {
+  $b-maxwidth: 300px;
+  $b-minwidth: 200px;
+  $b-maxheight: auto;
+  $b-minheight: 2270px;
+  $b-mainVerticalMargin: 48px;
+  $b-childVerticalMargin: 24px;
+  .Copavenadotuerto-wrapper-image {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: inherit;
+    min-height: $b-minheight;
+    max-height: $b-maxheight;
+    background-image: url($imageUrl);
+    background-position: center;
+    background-position: 80% 0%;
+    z-index: 150 !important;
+    opacity: 0.35;
+  }
+  .Copavenadotuerto-wrapper-gradient {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: $b-minheight;
+    //min-height: $b-minheight;
+    //max-height: $b-maxheight;
+    z-index: 200;
+    opacity: 1;
+    background-image: linear-gradient(
+      to top,
+      $mainColor 0%,
+      rgba(245, 0, 87, 1) 60.8%,
+      rgba(245, 0, 87, 0.2) 90%
+    );
+  }
+  .Copavenadotuerto-wrapper {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    min-height: 1780px;
+    //max-height: $b-maxheight;
+    overflow: none;
+    z-index: 1000;
+    //background-color: rgba(17, 18, 23, 1);
+    .Copavenadotuerto-content {
+      position: relative;
+      margin: 0 auto !important;
+      width: 80%;
+      height: inherit;
+      min-height: 850px;
+      .nav-bar {
+        position: relative;
+        display: block; // Section Display
+        left: -10vw;
+        width: 100vw;
+        z-index: 1000;
+        height: 68px;
+        background-color: transparent;
+        .nav-bar-content {
+          position: relative;
+          width: 70%;
+          height: 68px;
+          margin: 0 auto;
+          font-family: $classicFont;
+          .app-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            line-height: $navHeight;
+            font-size: 35px;
+            cursor: pointer;
+            transition: $openTransition;
+            color: white;
+          }
+          .sponsor-footer-prod {
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 90px !important;
+            height: 45px;
+            margin: 0 auto;
+            margin-top: 25px;
+            .sponsor-img {
+              cursor: pointer;
+              width: 90px;
+              height: 45px;
+              margin: 0px auto;
+              object-fit: fill
+            }
+            .es-prod{
+              cursor: pointer;
+              color: white;
+              position: absolute;
+              font-size: 10px;
+              bottom: 0;
+              right: 0;
+            }
+          }
+          .app-menu-dropdown {
+            position: absolute !important;
+            background-color: $background-color;
+            border-radius: 6px;
+            width: 120px !important;
+            height: 60px !important;
+            z-index: 1000 !important;
+            top: 48px !important;
+            padding: 0px !important;
+            border: 0px 0px 1px 1px;
+            border-style: solid rgb(225, 225, 225);
+            box-shadow: 5px 5px 5px 0px rgba(225, 225, 225, 0.25);
+            .profile-button {
+              cursor: pointer;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 0px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              color: #2979ff;
+              border: 1px solid #2979ff;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 225, 225, 0.5);
+                transition: 0.5s;
+              }
+            }
+            .log-out {
+              cursor: pointer;
+              color: red;
+              border: 1px solid red;
+              pointer-events: auto !important;
+              position: absolute;
+              text-align: center;
+              display: inline-block !important;
+              left: 60px !important;
+              margin: 10px 10px !important;
+              width: 40px;
+              height: 40px;
+              line-height: 40px !important;
+              transition: $openTransition;
+              background: inherit;
+              border-radius: 6px;
+              font-size: 32px;
+              transition: 0.5s;
+              &:hover {
+                box-shadow: 0px 0px 6px 0px rgba(225, 125, 125, 0.8);
+                transition: 0.5s;
+              }
+            }
+          }
+          .loading-img {
+            position: absolute;
+            top: 24px;
+            margin: 0 auto !important;
+            right: 64.5px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      .logo-align {
+        display: block;
+        width: 100%;
+        margin: 0 auto !important;
+        //margin-top: $b-childVerticalMargin !important;
+        max-width: $b-maxwidth;
+        text-align: center;
+        .vs-logo {
+          cursor: pointer;
+          position: relative;
+          left: -10px;
+          margin-top: 15px;
+          display: inline-block;
+          width: 270px;
+          //max-width: $b-maxwidth;
+          //min-width: $b-minwidth;
+          height: 170px;
+          object-fit: contain;
+          text-align: center;
+        }
+      }
+      @include gamesModal-cel;
+      .Copavenadotuerto-legend {
+        display: block;
+        z-index: -500;
+        margin: 0 auto !important;
+        margin-top: $b-childVerticalMargin !important;
+        margin-bottom: $b-mainVerticalMargin !important;
+        padding: 0;
+        width: $b-minwidth;
+        font-family: 'Roboto';
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: -0.25px;
+        text-align: center;
+        color: #ffffff;
+      }
+      .loading-img {
+        display: block;
+        margin: 0 auto;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        width: 52px;
+        height: 52px;
+      }
+      .play-button {
+        display: none;
+        display: block;
+        margin: 0 auto;
+        width: $b-minwidth*1.25;
+        height: 52px;
+        margin-bottom: $b-mainVerticalMargin;
+        line-height: 52px;
+        border-radius: 6px;
+        border: solid 2px $mainColor;
+        background-color: #111217;
+        @include buttonHover;
+        .button-contenido {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          text-align: center;
+          vertical-align: middle;
+          color: #ffffff;
+        }
+      }
+      .video-content {
+        position: absolute;
+        margin-top: $b-mainVerticalMargin;
+        margin-bottom: $b-mainVerticalMargin;
+        top: 68px;
+        width: 100% !important;
+        z-index: 1000;
+        margin: 0 auto;
+        .video-align {
+          position: relative;
+          width: 262px;
+          margin: 0 auto !important;
+          .video-text {
+            font-size: 18px;
+            color: white;
+            font-family: $classicFont;
+          }
+          .sponsor-video {
+            position: relative;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+      .text-sponsor {
+        display: block;
+        margin: inherit;
+        margin-top: $b-mainVerticalMargin/2;
+        height: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        z-index: 150000;
+      }
+      .text-sponsor-1 {
+        display: block;
+        margin: inherit;
+        margin-top: $b-mainVerticalMargin/2;
+        height: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        z-index: 150000;
+      }
+      .sponsor-footer-prod {
+        display: none;
+        width: 240px !important;
+        margin: 0 auto;
+        margin-top: 25px;
+        .sponsor-img {
+          cursor: pointer;
+          width: 240px;
+          height: 115px;
+          margin: 0px auto;
+          object-fit: fill
+        }
+      }
+      .sponsor-footer {
+        display: block;
+        width: 256px;
+        margin: 0 auto;
+        .sponsor-img {
+          cursor: pointer;
+          width: 256px;
+          height: 138.25px;
+          margin: 12px 0px;
+          object-fit: contain;
+        }
+        .unr {
+          cursor: pointer;
+          width: 155px !important;
+          height: 155px !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin l {
+  @media (min-width: #{1280px}) {
+    @include Copavenadotuerto-1280;
+  }
+}
+@mixin m {
+  @media (min-width: #{768px}) {
+    @media (max-width: #{1279px}) {
+      @include Copavenadotuerto-768_1279;
+    }
+  }
+}
+@mixin sm {
+  @media (min-width: #{426px}) {
+    @media (max-width: #{768px}) {
+      @include Copavenadotuerto-426_768;
+    }
+  }
+}
+@mixin s {
+  @media (max-width: #{425px}) {
+    @include Copavenadotuerto-425;
+  }
+}
+
+#responsive-Copavenadotuerto {
+  width: 100vw;
+  height: 100vh;
+  //min-height: 1280px;
+  overflow-x: hidden !important;
+  @media (max-width: #{425px}) {
+    min-height: 1024px !important;
+  }
+  @media (min-width: #{426px}) {
+    @media (max-width: #{768px}) {
+      min-height: 1280px;
+    }
+  }
+  @media (min-width: #{768px}) {
+    @media (max-width: #{1279px}) {
+      min-height: 1024px;
+    }
+  }
+  background-color: rgba(17, 18, 23, 1);
+  @include s;
+  @include sm;
+  @include m;
+  @include l;
+}

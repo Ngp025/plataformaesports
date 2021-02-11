@@ -1,0 +1,1679 @@
+$classicFont: 'Roboto', sans-serif;
+
+* {
+  margin-bottom: 0px;
+}
+
+// Animation
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(-200px);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.opacity {
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+}
+.animatedO {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+//----------
+
+@mixin registerLabel() {
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 136px;
+  margin-right: 136px;
+  width: 300px;
+  height: 12px;
+  font-family: $classicFont;
+  text-align: left;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 12px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #828699 !important;
+}
+@mixin registerField() {
+  display: inline-block;
+  margin-left: 136px !important;
+  margin-right: 136px !important;
+  width: 300px !important;
+  height: 26px;
+  padding: none !important;
+  padding-left: 2px;
+  font-family: $classicFont;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  &::placeholder {
+    font-size: 15.5px;
+    line-height: 33px;
+    color: rgba(255, 234, 253, 0.45) !important;
+  }
+  &:focus {
+    background-color: transparent !important;
+    box-shadow: none;
+    -webkit-appearance: none !important;
+  }
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #212433;
+  font-size: 16px;
+  border-radius: 6px;
+  padding-left: 4px;
+  outline-color: transparent;
+  box-shadow: none;
+  line-height: 26px;
+}
+.modal-content::-webkit-scrollbar {
+  width: 12px;
+}
+.modal-content::-webkit-scrollbar-track {
+  //background: rgba(210, 210, 210, 0.1);
+  border-radius: 5px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(210, 210, 210, 0.4);
+  opacity: 0.1;
+  //border: 0.05em solid #eeeeee;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(210, 210, 210, 0.8);
+}
+.modal-content::-webkit-scrollbar-thumb:active {
+  background: rgba(210, 210, 210, 0.8);
+}
+.modal-content::-webkit-scrollbar-button {
+  border-style: solid;
+  height: 10px;
+  width: 10px;
+}
+.modal-content::-webkit-scrollbar-button:vertical:decrement {
+  height: 0px;
+  border-width: 0 7px 14px 7px;
+  border-color: transparent transparent rgba(40, 100, 40, 0) transparent;
+}
+.modal-content::-webkit-scrollbar-button:vertical:decrement:hover {
+  border-color: transparent transparent rgb(180, 180, 180) transparent;
+}
+.modal-content::-webkit-scrollbar-button:vertical:increment {
+  height: 0px;
+  border-width: 14px 7px 0 7px;
+  border-color: rgba(40, 100, 40, 0) transparent transparent transparent;
+}
+.modal-content::-webkit-scrollbar-button:vertical:increment:hover {
+  border-color: rgb(180, 180, 180) transparent transparent transparent;
+}
+
+@mixin loginModal-content-1280and768 {
+  .modal-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 6px;
+    height: 100%;
+    .login-box {
+      .login-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 26px;
+        text-align: center;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-loginlocal-email {
+        display: inline-block;
+        margin-top: 40px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .email-local-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin-left: 136px;
+        margin-right: 136px;
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+        width: 300px;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        box-shadow: none !important;
+        overflow: hidden;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+          border: none;
+        }
+      }
+      .label-loginlocal-password {
+        display: inline-block;
+        margin-top: 33px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-local-input {
+        display: inline-block;
+        margin-left: 136px;
+        margin-right: 136px;
+        padding: 0px !important;
+        padding-left: 2px !important;
+        width: 300px;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .submit-loginlocal {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 49px;
+        margin-left: 226px !important;
+        margin-right: 226px !important;
+        width: 120px;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+      .login-canvas {
+        display: inline-block;
+        margin-top: 40px !important;
+        margin-left: 136px;
+        margin-right: 136px;
+        height: 1px;
+        width: 300px;
+      }
+      .to-register {
+        cursor: pointer;
+        margin-top: 24px;
+        margin-left: 154px !important;
+        margin-right: 154px !important;
+        width: 264px !important;
+        height: 30px;
+        border-radius: 6px;
+        background-color: #212433;
+        font-family: $classicFont;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        .elevate-span {
+          width: 54px;
+          height: 13px;
+          font-family: $classicFont;
+          font-size: 17px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          text-align: left;
+          color: '';
+        }
+      }
+      .submit-lostPass {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 16px;
+        margin-left: 154px !important;
+        margin-right: 154px !important;
+        width: 264px !important;
+        height: 12px;
+        font-family: $classicFont;
+        font-size: 12px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: center;
+        background-color: transparent !important;
+        -webkit-appearance: none;
+      }
+    }
+    .register-box {
+      .register-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: 222px;
+        margin-right: 222px;
+        padding-left: 12px;
+        width: 128px;
+        height: 26px;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-name-register {
+        @include registerLabel();
+      }
+      .club-label{
+        @include registerLabel();
+      }
+      .club-select{
+        @include registerField();
+        height: auto !important;
+      }
+      .name-register {
+        @include registerField();
+      }
+      .label-email-register {
+        @include registerLabel();
+      }
+      .email-register {
+        @include registerField();
+      }
+      .label-date-register {
+        @include registerLabel();
+      }
+      .date-register {
+        @include registerField();
+        ::-webkit-inner-spin-button {
+          display: none;
+        }
+        ::-webkit-calendar-picker-indicator:hover {
+          background: none;
+        }
+      } /*
+            .tutor-data{
+            }*/
+      .tutor-auth {
+        @include registerLabel();
+        color: rgb(243, 169, 126) !important;
+      }
+      .label-document-register {
+        @include registerLabel();
+      }
+      .document-input {
+        @include registerField();
+        -webkit-appearance: none !important;
+        margin: 0;
+      }
+      .label-city-register {
+        @include registerLabel();
+      }
+      .city-register {
+        @include registerField();
+      }
+      .label-password-register {
+        @include registerLabel();
+      }
+      .password-register {
+        @include registerField();
+      }
+      .label-passwordconfirm-register {
+        @include registerLabel();
+      }
+      .passwordconfirm-register {
+        @include registerField();
+      }
+      .label-policy-register {
+        cursor: pointer;
+        @include registerLabel();
+      }
+      .register-submit {
+        cursor: pointer;
+        margin-left: 215px;
+        margin-right: 215px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        width: 144px;
+        height: 32px;
+        border-radius: 6px;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+    .recovery-box {
+      .recovery-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        width: 100%;
+        text-align: center;
+        height: 26px;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .recovery-condition {
+        display: inline-block;
+        margin-top: 24px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 42px;
+        text-align: justify;
+        font-family: $classicFont;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 14px;
+        letter-spacing: normal;
+        color: #828699 !important;
+      }
+      .label-recovery-email {
+        display: inline-block;
+        margin-top: 25px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .email-recovery-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin-left: 136px;
+        margin-right: 136px;
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+        width: 300px;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        box-shadow: none !important;
+        overflow: hidden;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+          border: none;
+        }
+      }
+      .label-recovery-password {
+        display: inline-block;
+        margin-top: 30px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-recovery-input {
+        display: inline-block;
+        margin-left: 136px;
+        margin-right: 136px;
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+        padding-left: 2px !important;
+        width: 300px;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .label-recovery-password-2-confirm {
+        display: inline-block;
+        margin-top: 33px;
+        margin-left: 136px;
+        margin-right: 136px;
+        width: 300px;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-recovery-input-2-confirm {
+        display: inline-block;
+        margin-left: 136px;
+        margin-right: 136px;
+        padding: 0px !important;
+        padding-left: 2px !important;
+        width: 300px;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .submit-recovery {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: 212px;
+        margin-right: 212px;
+        width: 148px;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+    .validation-box {
+      .validation-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: 166px !important;
+        margin-right: 166px !important;
+        width: 240px !important;
+        height: 26px;
+        font-family: $classicFont;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-validation-token {
+        display: inline-block;
+        margin-left: 136px !important;
+        margin-right: 136px !important;
+        margin-top: 40px;
+        width: 300px !important;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .label-email-token {
+        display: inline-block;
+        margin-left: 136px !important;
+        margin-right: 136px !important;
+        margin-top: 40px;
+        width: 300px !important;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .validation-token-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin-left: 136px !important;
+        margin-right: 136px !important;
+        width: 300px;
+        height: 36px;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 33px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        outline: none;
+        border: none;
+        box-shadow: none !important;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:focus {
+          background-color: transparent !important;
+          outline: none;
+          border: none;
+          box-shadow: none;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none;
+        }
+      }
+      .validate-submit {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 49px;
+        margin-left: 225px !important;
+        margin-right: 225px !important;
+        width: 122px !important;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+      .clearRegister {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 16px;
+        margin-left: 154px !important;
+        margin-right: 154px !important;
+        width: 264px !important;
+        height: 13px;
+        font-family: $classicFont;
+        font-size: 13px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 13px;
+        letter-spacing: normal;
+        text-align: center;
+        background-color: transparent !important;
+        -webkit-appearance: none;
+      }
+    }
+    .congrats-box {
+      .congrats-tittle {
+        display: inline-block;
+        text-align: center;
+        margin-top: 29px;
+        margin-left: 166px !important;
+        margin-right: 166px !important;
+        width: 240px !important;
+        height: 26px;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .congrats-img {
+        margin-top: 154px;
+        margin-left: 248.5px !important;
+        margin-right: 248.5px !important;
+        width: 75px !important;
+        height: 75px;
+      }
+    }
+    .updating-box {
+      .loading-img {
+        margin-top: 205px !important;
+        margin-left: 248.5px !important;
+        margin-right: 248.5px !important;
+        width: 75px !important;
+        height: 75px;
+      }
+    }
+  }
+  .modal-close {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    color: #828699;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .return-modal {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    color: #828699;
+    transition: 1s;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+// Responsive Loguin MODAL
+
+@mixin loginModalResponsive {
+  .modal-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 6px;
+    width: 100%;
+    margin: 0 auto !important;
+    text-align: center !important;
+    height: inherit !important;
+    padding: 5px !important;
+    $s-margin: 27px;
+    $s-width: 310px;
+    box-sizing: none !important;
+    .login-box {
+      position: relative !important;
+      height: 100%;
+      width: 310px !important;
+      text-align: center !important;
+      margin: 0 auto !important;
+      .login-tittle {
+        display: inline-block;
+        margin: 0 auto !important;
+        margin-top: 29px !important;
+        width: $s-width;
+        height: 26px;
+        text-align: center;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-loginlocal-email {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $s-width;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .email-local-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin: 0 auto;
+        padding: 0px !important;
+        width: $s-width;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        box-shadow: none !important;
+        overflow: hidden;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &:before {
+          box-sizing: initial !important;
+          -webkit-box-sizing: initial !important;
+        }
+        &::after {
+          box-sizing: initial !important;
+          -webkit-box-sizing: initial !important;
+        }
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+          border: none;
+        }
+      }
+      .label-loginlocal-password {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $s-width;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-local-input {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0px !important;
+        width: $s-width;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .submit-loginlocal {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 auto !important;
+        margin-top: 40px !important;
+        text-align: center !important;
+        width: 40% !important;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+      .login-canvas {
+        display: inline-block;
+        margin: 0 auto !important;
+        margin-top: 40px !important;
+        height: 1px;
+        width: 90% !important;
+      }
+      .to-register {
+        cursor: pointer;
+        margin-top: 24px;
+        width: 90% !important;
+        height: 30px;
+        border-radius: 6px;
+        background-color: #212433;
+        font-family: $classicFont;
+        font-size: 13px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        .elevate-span {
+          width: 54px;
+          height: 13px;
+          font-family: $classicFont;
+          font-size: 17px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          text-align: left;
+        }
+      }
+      .submit-lostPass {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 16px;
+        width: 100%;
+        height: 12px;
+        font-family: $classicFont;
+        font-size: 12px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: center;
+        background-color: transparent !important;
+        -webkit-appearance: none;
+      }
+    }
+    .recovery-box {
+      .recovery-tittle {
+        display: inline-block;
+        margin: 0 auto !important;
+        margin-top: 29px !important;
+        width: $s-width;
+        height: 26px;
+        text-align: center;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .recovery-condition {
+        display: inline-block;
+        margin-top: 24px;
+        width: 300px;
+        height: 42px;
+        text-align: justify;
+        font-family: $classicFont;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 14px;
+        letter-spacing: normal;
+        color: #828699 !important;
+      }
+      .label-recovery-email {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $s-width;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .email-recovery-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin: 0 auto;
+        padding: 0px !important;
+        width: $s-width;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        box-shadow: none !important;
+        overflow: hidden;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &:before {
+          box-sizing: initial !important;
+          -webkit-box-sizing: initial !important;
+        }
+        &::after {
+          box-sizing: initial !important;
+          -webkit-box-sizing: initial !important;
+        }
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+          border: none;
+        }
+      }
+      .label-recovery-password {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $s-width;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-recovery-input {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0px !important;
+        width: $s-width;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .label-recovery-password-2-confirm {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 40px;
+        width: $s-width;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .password-recovery-input-2-confirm {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0px !important;
+        width: $s-width;
+        height: 34px !important;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 34px !important;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        box-shadow: none !important;
+        outline: none !important;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none !important;
+        }
+      }
+      .submit-recovery {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: 35%;
+        margin-right: 35%;
+        width: 30%;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+    .register-box {
+      .register-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: $s-margin/2;
+        margin-right: $s-margin/2;
+        padding-left: 12px;
+        width: $s-width;
+        height: 26px;
+        text-align: center;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-name-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .name-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .club-label{
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .club-select{
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+        height: auto !important;
+      }
+      .label-email-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .email-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .label-date-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .date-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+        ::-webkit-inner-spin-button {
+          display: none;
+        }
+        ::-webkit-calendar-picker-indicator:hover {
+          background: none;
+        }
+      } /*
+            .tutor-data{
+            }*/
+      .tutor-auth {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+        color: rgb(243, 169, 126) !important;
+      }
+      .label-document-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .document-input {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+        -webkit-appearance: none !important;
+        margin: 0;
+      }
+      .label-city-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .city-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .label-password-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .password-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .label-passwordconfirm-register {
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .passwordconfirm-register {
+        @include registerField();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .label-policy-register {
+        cursor: pointer;
+        @include registerLabel();
+        margin-left: $s-margin !important;
+        margin-left: $s-margin !important;
+        width: $s-width !important;
+      }
+      .register-submit {
+        cursor: pointer;
+        margin-left: 64px;
+        margin-right: 64px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        width: 144px;
+        height: 32px;
+        border-radius: 6px;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+    .validation-box {
+      .validation-tittle {
+        display: inline-block;
+        margin-top: 29px;
+        margin-left: $s-margin !important;
+        margin-right: $s-margin !important;
+        width: $s-width !important;
+        height: 26px;
+        font-family: $classicFont;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .label-validation-token {
+        display: inline-block;
+        margin-left: $s-margin;
+        margin-right: $s-margin;
+        margin-top: 40px;
+        width: $s-width !important;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 11px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .label-email-token {
+        display: inline-block;
+        margin-left: $s-margin;
+        margin-right: $s-margin;
+        margin-top: 40px;
+        width: $s-width !important;
+        height: 12px;
+        font-family: $classicFont;
+        text-align: left;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 12px;
+        letter-spacing: normal;
+        text-align: left;
+        color: #828699 !important;
+      }
+      .validation-token-input {
+        display: inline-block;
+        background-color: #212433 !important;
+        margin-left: $s-margin;
+        margin-right: $s-margin;
+        width: $s-width;
+        height: 36px;
+        font-family: $classicFont;
+        font-size: 16px;
+        line-height: 33px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        resize: none;
+        overflow: hidden;
+        outline: none;
+        border: none;
+        box-shadow: none !important;
+        border-bottom: 1px solid #ffffff;
+        color: #ffffff;
+        &::placeholder {
+          font-size: 16px;
+          line-height: 33px;
+          color: #828699;
+        }
+        &:focus {
+          background-color: transparent !important;
+          outline: none;
+          border: none;
+          box-shadow: none;
+        }
+        &:hover {
+          background-color: transparent !important;
+          outline: none;
+        }
+      }
+      .validate-submit {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 49px;
+        margin-left: 75px !important;
+        margin-right: 75px !important;
+        width: 122px !important;
+        height: 32px;
+        border-radius: 6px;
+        border: none;
+        font-family: $classicFont;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 32px;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+      }
+      .clearRegister {
+        cursor: pointer;
+        display: inline-block;
+        margin-top: 16px;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+        width: 264px !important;
+        height: 13px;
+        font-family: $classicFont;
+        font-size: 13px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 13px;
+        letter-spacing: normal;
+        text-align: center;
+        background-color: transparent !important;
+        -webkit-appearance: none;
+      }
+    }
+    .congrats-box {
+      .congrats-tittle {
+        display: inline-block;
+        text-align: center;
+        margin-top: 29px;
+        margin-left: 66px !important;
+        margin-right: 66px !important;
+        width: 240px !important;
+        height: 26px;
+        font-family: $classicFont;
+        font-size: 24px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 26px;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .congrats-img {
+        margin-top: 154px;
+        margin-left: 148.5px !important;
+        margin-right: 148.5px !important;
+        width: 75px !important;
+        height: 75px;
+      }
+    }
+    .updating-box {
+      .loading-img {
+        margin-top: 205px !important;
+        margin-left: 148.5px !important;
+        margin-right: 148.5px !important;
+        width: 75px !important;
+        height: 75px;
+      }
+    }
+  }
+  .modal-close {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    margin: 0px;
+    color: #828699;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .return-modal {
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    color: #828699;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+@mixin l {
+  @media (min-width: #{1280px}) {
+    @include loginModal-content-1280and768;
+  }
+}
+@mixin m {
+  @media (min-width: #{768px}) {
+    @media (max-width: #{1279px}) {
+      @include loginModal-content-1280and768;
+    }
+  }
+}
+@mixin sm {
+  @media (min-width: #{426px}) {
+    @media (max-width: #{768px}) {
+      @include loginModalResponsive;
+    }
+  }
+}
+@mixin s {
+  @media (max-width: #{425px}) {
+    @include loginModalResponsive;
+  }
+}
+
+.loginModal {
+  border-radius: 6px;
+  box-shadow: 0 0 50px 0 rgba(255, 255, 255, 0.25);
+  background-color: #212433;
+  z-index: 1750 !important;
+  @media (min-width: #{1280px}) {
+    width: 622px !important;
+    height: 533px !important;
+    min-height: 533px !important;
+  }
+  @media (min-width: #{768px}) {
+    @media (max-width: #{1279px}) {
+      width: 622px !important;
+      height: 533px !important;
+      min-height: 533px !important;
+    }
+  }
+  @media (min-width: #{426px}) {
+    @media (max-width: #{768px}) {
+      width: 100% !important;
+      height: 900px !important;
+    }
+  }
+  @media (max-width: #{425px}) {
+    width: 100% !important;
+    height: 900px !important;
+  }
+  @include l;
+  @include m;
+  @include sm;
+  @include s;
+}
+.modal {
+  max-height: 100% !important;
+}

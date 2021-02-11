@@ -1,0 +1,131 @@
+$margin-left: 3vw;
+$margin-left-rm: 11vw;
+$navigation-bar-heigth: 65px;
+$classicFont: '$classicFont', sans-serif;
+
+@mixin lowGradeButton {
+  background-color: #111217;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin highGradeButton {
+  background-color: #fb2062;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin buttonHover {
+  &:hover {
+    background-color: #fb2062;
+    color: white;
+    transition: 1s;
+  }
+}
+
+#terms-main-wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+#terms-main-wrapper::-webkit-scrollbar-track {
+  background: rgba(251, 32, 98, 0.1);
+  border-radius: 5px;
+}
+#terms-main-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(251, 32, 98, 0.4);
+  opacity: 0.1;
+  //border: 0.05em solid #eeeeee;
+}
+#terms-main-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 32, 98, 0.8);
+}
+#terms-main-wrapper::-webkit-scrollbar-thumb:active {
+  background: rgba(251, 32, 98, 0.8);
+}
+#terms-main-wrapper::-webkit-scrollbar-button {
+  border-style: solid;
+  height: 10px;
+  width: 10px;
+}
+#terms-main-wrapper::-webkit-scrollbar-button:vertical:decrement {
+  height: 0px;
+  border-width: 0 7px 14px 7px;
+  border-color: transparent transparent rgba(40, 100, 40, 0) transparent;
+}
+#terms-main-wrapper::-webkit-scrollbar-button:vertical:decrement:hover {
+  border-color: transparent transparent rgb(180, 180, 180) transparent;
+}
+#terms-main-wrapper::-webkit-scrollbar-button:vertical:increment {
+  height: 0px;
+  border-width: 14px 7px 0 7px;
+  border-color: rgba(40, 100, 40, 0) transparent transparent transparent;
+}
+#terms-main-wrapper::-webkit-scrollbar-button:vertical:increment:hover {
+  border-color: rgb(180, 180, 180) transparent transparent transparent;
+}
+
+#terms-main-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1280px;
+  min-height: 842px;
+  opacity: 1;
+  background-color: #111217;
+  overflow-x: hidden;
+  #terms-wrapper {
+    display: block;
+    text-align: left;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    padding: 0 200px;
+    opacity: 0.5;
+    background: radial-gradient(
+      circle,
+      rgba(251, 32, 98, 0.35) 0%,
+      transparent 45%,
+      transparent 55%,
+      transparent 65%,
+      transparent 75%,
+      transparent 100%
+    );
+    min-width: 1280px;
+    min-height: 842px;
+    opacity: 1;
+    background-position: center;
+    $standarTransition: 1s;
+    $minWidth: 1136px;
+    $widthMargin: 0px;
+    $buttonsRadius: 6px;
+    $navHeight: 2 68px;
+    $classicFont: 'Roboto', sans-serif;
+    $buttonsBorder: solid 2px #fb2062;
+    $classicColor: #fb2062;
+    #principal-div-terms {
+      overflow: scroll;
+      background: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.5049370089832808) 0%,
+        rgba(137, 49, 49, 0.14684177088804273) 49%,
+        rgba(0, 0, 0, 0.5021358885351015) 100%
+      );
+      color: white;
+      position: absolute;
+      top: 157px;
+      width: 550px;
+      height: 125px;
+      border-radius: 6px;
+      left: 120px;
+    }
+  }
+  h4 {
+    color: white !important;
+    opacity: 0.8;
+    text-align: center !important;
+  }
+  p {
+    color: white !important;
+    opacity: 0.8;
+  }
+}

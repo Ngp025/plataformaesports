@@ -1,0 +1,28 @@
+$background-color: #212433;
+
+.settings-footer {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  bottom: 0px;
+  border-top: 1px solid $background-color;
+  width: 100vw;
+  height: 96px;
+  background-color: #111217;
+  .footer-legend {
+    width: 302px;
+    height: 12px;
+    font-family: $classicFont;
+    font-size: 12px;
+    line-height: 64px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #828699;
+  }
+  .footer-terms-and-politics {
+  }
+}

@@ -1,0 +1,10 @@
+.ml-playLanding-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 300px;
+  overflow: none;
+  //@include large;
+  @import '../_game-template/game-playLanding.scss';
+  //@include small;
+}

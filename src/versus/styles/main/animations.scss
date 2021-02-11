@@ -1,0 +1,129 @@
+// --------------------------------------- Opacity -------------------------------------------------
+
+.animatedO {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.opacity {
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+}
+// LARGE OPACITY -------------------------------------------------
+
+.animatedOL {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 1.5s;
+  animation-delay: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes opacityL {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.opacityL {
+  -webkit-animation-name: opacityL;
+  animation-name: opacityL;
+}
+// disapear -------------------------------------------------------------------------------------
+
+.disappearA {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  animation-delay: 3.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+}
+
+.disappear {
+  -webkit-animation-name: disappear;
+  animation-name: disappear;
+}
+
+// ----------------------------------------- HOME CSS --------------------------------------------------
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(-620px, 0px, 0px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animatedLeft {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  opacity: 0;
+  animation-name: animatedFadeInLeft;
+  -webkit-animation-name: fadeInLeft;
+}
+
+// --------------------------------------- FADE IN TOP -------------------------------------------------
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animatedUp {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  position: inherit;
+}
+
+// ----------------------------------------------------------------------

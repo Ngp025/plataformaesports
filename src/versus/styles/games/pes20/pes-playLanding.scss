@@ -1,0 +1,8 @@
+.pes20-playLanding-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 300px;
+  overflow: none;
+  @import '../_game-template/game-playLanding.scss';
+}

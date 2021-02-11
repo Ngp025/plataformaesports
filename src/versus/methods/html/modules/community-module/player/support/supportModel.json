@@ -1,0 +1,56 @@
+{  
+  "faq-0": {
+  "question": "Reportar un problema",
+  "solution0": "Para reportar cualquier problema a la siguiente dirección de e-mail: soporte.plataformaesports@gmail.com",
+  "solutionImage0": "none",
+  "solution1": "none",
+  "solutionImage1": "none",
+  "solution2": "none",
+  "solutionImage2": "none"
+  },
+  "faq-1": {
+    "question": "¿Como Jugar?",
+    "solution0": "Para jugar comienza por inscribirte al torneo que mas te guste, el boton se encuentra en el panel de torneo, en esta misma pagina",
+    "solutionImage0": "none",
+    "solution1": "Recuerda escribir bien tus datos en la inscripción para poder coordinarte con tu rival.",
+    "solutionImage1": "none",
+    "solution2": "Cuando la cuenta regresiva llega a 0 conocerás la información de tu rival y deberás hacer un 'Check In', luego agregar a tu rival",
+    "solutionImage2": "none"
+  },
+  "faq-2": {
+    "question": "¿Cómo válidar la partida?",
+    "solution0": "Para validar la partida deberás subir una imagen, foto o captura que sirva como prueba de tu victoria",
+    "solutionImage0": "none",
+    "solution1": "En caso de empate ambos jugadores deberán haber declarado el empate y se jugará un partido extra pero a gol de oro para definir el partido empatado",
+    "solutionImage1": "none",
+    "solution2": "none",
+    "solutionImage2": "none"
+  },
+  "faq-3": {
+    "question": "¿Quién es mi próximo rival?",
+    "solution0": "Cuando la cuenta regresiva llega a 0 aparecerán los datos necesarios de tu proximo rival, para que puedan crear la partida",
+    "solutionImage0": "none",
+    "solution1": "none",
+    "solutionImage1": "none",
+    "solution2": "none",
+    "solutionImage2": "none"
+  },
+  "faq-4": {
+    "question": "¿Cómo modificar mis datos?",
+    "solution0": "En la esquina superior derecha, podras acceder a tu perfil para ver o editar tus datos personales",
+    "solutionImage0": "none",
+    "solution1": "Si precisas modificar tu nickname o playstation id, contacta a través del grupo de whatsapp o al mail indicado en el reglamento",
+    "solutionImage1": "none",
+    "solution2": "none",
+    "solutionImage2": "none"
+  },
+  "faq-5": {
+    "question": "¿Cómo reportar un rival?",
+    "solution0": "Puedes reportar cualquier falta al reglamento a través del grupo de Whats app o enviando un mail a soporte.plataformaesports@gmail.com",
+    "solutionImage0": "none",
+    "solution1": "none",
+    "solutionImage1": "none",
+    "solution2": "none",
+    "solutionImage2": "none"
+  }
+}

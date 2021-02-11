@@ -1,0 +1,18 @@
+$viewIndex: 25;
+$viewContent: 40;
+$whidthLimit: 5vw;
+$min-height-Mdivs: 673.2px;
+$min-width-Mdivs: 120px;
+
+.fifa20-playLanding-wrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 300;
+  overflow: none;
+  @media screen and (min-width: 1280px) {
+    @import '../_game-template/game-playLanding.scss';
+  }
+
+  //@include small;
+}

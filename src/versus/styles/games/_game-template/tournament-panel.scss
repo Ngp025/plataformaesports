@@ -1,0 +1,457 @@
+$classicFont: '$classicFont', sans-serif;
+
+@mixin lowGradeButton {
+  background-color: #111217;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin highGradeButton {
+  background-color: #fb2062;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin buttonHover {
+  &:hover {
+    background-color: #fb2062;
+    color: white;
+    transition: 1s;
+  }
+}
+//local vars
+$viewIndex: 25;
+$navigationMinHeight: 60px;
+$backgroundColor: #111217;
+$navigationHeight: 60px;
+
+.main-wrapper {
+  position: absolute !important;
+  display: block !important;
+  top: 0px !important;
+  left: 0px !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  min-width: 1600px !important;
+  //min-height: 900px;
+  background: #111217 !important;
+  overflow: none !important;
+  .navigation-bar {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    z-index: 40;
+    top: 0;
+    background: transparent;
+    width: 100%;
+    padding-top: $navigationMinHeight/3.5;
+    padding-bottom: $navigationMinHeight/3.5;
+    vertical-align: middle;
+    height: $navigationHeight;
+    min-height: $navigationMinHeight;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #fb2062;
+    .navigation-bar-content {
+      position: relative;
+      width: 1338px;
+      margin: 0 auto;
+      height: inherit;
+      .save-tournament {
+        cursor: pointer;
+        position: absolute;
+        width: 175px;
+        margin-top: 12.5px;
+        height: 35px;
+        line-height: 31px;
+        right: 25px;
+        @include highGradeButton;
+        text-transform: uppercase;
+      }
+      .back-button {
+        cursor: pointer;
+        position: absolute;
+        left: 0px;
+        color: #fb2062;
+        line-height: $navigationHeight;
+      }
+      .panel-tournament-title {
+        position: absolute;
+        color: white;
+        font-family: $classicFont;
+        font-size: 24px;
+        margin: 0px;
+        padding: 0px;
+        line-height: $navigationHeight;
+        height: $navigationHeight;
+        left: 50px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .tournament-panel-bg {
+    position: absolute;
+    display: inline-block;
+    margin: 0 auto;
+    height: inherit !important;
+    width: inherit !important;
+    min-width: 1600px;
+    background: radial-gradient(
+      circle,
+      #fb2062 0%,
+      transparent 37%,
+      transparent 47%,
+      transparent 51%,
+      transparent 59%,
+      transparent 100%
+    );
+  }
+  .tournament-panel-content-wrapper {
+    position: relative;
+    width: 1338px;
+    height: inherit;
+    margin: 0 auto;
+    .organizer-buttons {
+      position: absolute;
+      top: 100px;
+      display: inline-block;
+      width: 833px;
+      height: 750px;
+      //background-color: rgba(17, 18, 23 , 0.75);
+      .days-labels {
+        display: block;
+        position: absolute !important;
+        top: -25px !important;
+        width: 833px !important;
+        height: 20px !important;
+        line-height: 20px !important;
+        font-size: 16px !important;
+        color: white !important;
+        font-family: $classicFont !important;
+        border: none !important;
+        background: transparent !important;
+        &:hover {
+          transform: none !important;
+        }
+        span {
+          width: 400px !important;
+          margin: 0 43.25px;
+          margin-top: 50px;
+        }
+      }
+      div {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        box-shadow: none;
+        border: none;
+        margin: 2.5px !important;
+        width: 114px;
+        height: 75px;
+        font-family: $classicFont;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        color: white;
+        transition: 0.5s;
+        @include lowGradeButton();
+        @include buttonHover();
+        &:hover {
+          transition: 0.5s;
+          transform: scale(1.05);
+        }
+        .button-label {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          //background-color: white;
+          line-height: 32.5px;
+          text-align: center;
+          color: #212433;
+          border-radius: 15px;
+          font-size: 11px;
+          width: 32.5px;
+          height: 32.5px;
+          pointer-events: none;
+        }
+      }
+      .itsClicked {
+        box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+        background-color: rgba(251, 32, 98, 0.75) !important;
+      }
+      .none {
+        border: 2px solid rgba(251, 32, 98, 1) !important ;
+      }
+      .initial {
+        border: 2px solid #3495eb !important ;
+      }
+      .panel-button.initial {
+        background-color: #3495eb !important;
+        border: 2px solid #3495eb;
+      }
+      .panel-button.initial-userClicked {
+        background-color: #3495eb !important;
+        border: 2px solid rgba(251, 32, 98, 0.75) !important ;
+        box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+      }
+      .mid {
+        border: 2px solid #ffb74d !important ;
+      }
+      .panel-button.mid {
+        background-color: #ffb74d !important ;
+        border: 2px solid #ffb74d !important ;
+      }
+      .panel-button.mid-userClicked {
+        background-color: #ffb74d !important;
+        border: 2px solid rgba(251, 32, 98, 0.75) !important ;
+        box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+      }
+      .final {
+        border: 2px solid #497039 !important;
+      }
+      .panel-button.final {
+        background-color: #497039 !important;
+        border: 2px solid #497039 !important;
+      }
+      .panel-button.final-userClicked {
+        background-color: #497039 !important;
+        border: 2px solid rgba(251, 32, 98, 0.75) !important ;
+        box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+      }
+      .panel-button.fix {
+        border-color: grey !important;
+        background-color: grey !important;
+      }
+    }
+    .organizer-form {
+      position: absolute;
+      display: inline-block;
+      width: 450px;
+      height: 750px;
+      top: 75px;
+      left: 858px;
+      //margin: 25px !important;
+      background-color: transparent;
+      //color: white;
+      border: 'none' !important;
+      border-radius: 6px;
+      .organizer-form-wrapper {
+        width: 450px;
+        height: 675px;
+        background-color: #212433;
+        border: solid 2px #fb2062;
+        border-radius: 6px;
+        color: white;
+        .content-tittle-label {
+          margin-left: 25px;
+          font-size: 22px;
+          width: inherit;
+          color: white;
+        }
+        .select-wrapper {
+          position: absolute !important;
+          width: 100px !important;
+          right: 0px !important;
+          background-color: transparent !important;
+          box-shadow: none !important;
+          margin: 0px !important;
+          .caret {
+            display: block !important;
+            right: 25px;
+            top: 0px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+            color: white;
+            margin: 0px !important;
+          }
+          input.select-dropdown {
+            position: absolute;
+            right: 25px;
+            width: 100px !important;
+            height: 38px !important;
+            line-height: 40px !important;
+            box-shadow: none !important;
+            border: 1px white solid !important;
+            background-color: transparent !important;
+            text-align: center;
+            border-radius: 6px;
+            color: white;
+            margin: 0px !important;
+          }
+        }
+        .day-gMax-div {
+          position: relative !important;
+          display: inline-block !important;
+          background-color: transparent;
+          padding-left: 25px !important;
+          width: 100%;
+          height: 40px;
+          .day-gMax-label {
+            position: absolute;
+            width: 75%;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            color: white;
+          }
+        }
+        .day-instance-div {
+          position: relative !important;
+          display: inline-block !important;
+          background-color: transparent;
+          padding-left: 25px !important;
+          width: 100%;
+          height: 40px;
+          .day-instance-div-label {
+            position: absolute;
+            width: 75%;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            color: white;
+          }
+        }
+        .day-finalInstance-div {
+          position: relative !important;
+          display: inline-block !important;
+          background-color: transparent;
+          padding-left: 25px !important;
+          width: 100%;
+          height: 40px;
+          label {
+            font-size: 14px;
+            color: white !important;
+            line-height: 40px;
+            //.day-finalInstance-checkbox{
+            //}
+            [type='checkbox'] + span:not(.lever):before,
+            [type='checkbox']:not(.filled-in) + span:not(.lever) {
+              border-color: #26c6da;
+            }
+            [type='checkbox']:checked + span:not(.lever):before {
+              border-top-color: transparent;
+              border-left-color: transparent;
+              border-bottom-color: #26c6da;
+              border-right-color: #26c6da;
+            }
+            .finalInstance-checkbox {
+              position: absolute;
+              margin: 9px 13px;
+              border-color: #26c6da !important;
+              box-shadow: #26c6da !important;
+              outline-color: #26c6da !important;
+            }
+          }
+        }
+        .panelForm-tStart-div {
+          position: relative !important;
+          display: inline-block !important;
+          background-color: transparent;
+          padding-left: 25px !important;
+          width: 100%;
+          height: 40px;
+          .panelForm-tStart-label {
+            position: absolute;
+            width: 75%;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            color: white;
+          }
+          input:not([type]),
+          input[type='text']:not(.browser-default),
+          input[type='password']:not(.browser-default),
+          input[type='email']:not(.browser-default),
+          input[type='url']:not(.browser-default),
+          input[type='time']:not(.browser-default),
+          input[type='date']:not(.browser-default),
+          input[type='datetime']:not(.browser-default),
+          input[type='datetime-local']:not(.browser-default),
+          input[type='tel']:not(.browser-default),
+          input[type='number']:not(.browser-default),
+          input[type='search']:not(.browser-default),
+          textarea.materialize-textarea {
+            position: absolute;
+            width: 100px !important;
+            right: 25px !important;
+            height: 38px !important;
+            line-height: 40px !important;
+            box-shadow: none !important;
+            border: 1px white solid !important;
+            background-color: transparent !important;
+            text-align: center;
+            border-radius: 6px;
+            color: white;
+            margin: 0px !important;
+            padding: 0px !important;
+            //padding-left: 8.5px !important;
+          }
+        }
+        .assign-day-div {
+          position: relative !important;
+          display: inline-block;
+          background-color: transparent;
+          padding-left: 25px !important;
+          width: 100%;
+          height: 150px;
+          .assign-day-label {
+            position: relative;
+            width: 75%;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            color: white;
+          }
+        }
+        .related-days-wrapper {
+          position: relative;
+          .unassigned-day-panel {
+            float: left;
+            width: 198px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            button {
+              background-color: white;
+            }
+            button.none-userClicked {
+              box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+              background-color: rgba(251, 32, 98, 0.75);
+            }
+          }
+          .assigned-day-panel {
+            float: right;
+            width: 198px;
+            height: 100px;
+            margin-right: 25px;
+            background-color: rgba(133, 133, 133, 0.1);
+          }
+        }
+        .save-instance {
+          cursor: pointer;
+          width: 150px;
+          height: 35px;
+          position: absolute;
+          bottom: 25px;
+          right: 0px;
+          @include buttonHover;
+          @include lowGradeButton;
+        }
+        .instance-erace {
+          cursor: pointer;
+          width: 150px;
+          height: 35px;
+          position: absolute;
+          bottom: 25px;
+          right: 175px;
+          @include buttonHover;
+          @include lowGradeButton;
+        }
+      }
+      .loading-img {
+        height: 75px;
+        width: 75px;
+      }
+    }
+  }
+}

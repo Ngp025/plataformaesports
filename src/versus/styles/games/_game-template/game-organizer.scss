@@ -1,0 +1,1252 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$viewIndex: 25;
+$viewContent: 40;
+$whidthLimit: 5vw;
+$min-height-Mdivs: 673.2px;
+$min-width-Mdivs: 120px;
+
+$rgbDeg1: 0%;
+$rgbDeg2: 0%;
+$rgbDeg3: 98%;
+$rgbDeg4: 100%;
+$goldSingIn: rgb(248, 151, 41);
+$goldRgba-semi: rgba(255, 191, 0, 0.75);
+$goldRgba-mid: rgba(255, 191, 0, 0.5);
+$goldRgba-none: rgba(255, 191, 0, 0);
+$background-color: #212433;
+// Theme Vars
+$themeColor: white;
+$marginDivBgLeft: linear-gradient(
+  90deg,
+  rgba(255, 191, 0, 0.085),
+  rgba(255, 191, 0, 0)
+);
+$marginDivBgRight: linear-gradient(
+  90deg,
+  rgba(255, 191, 0, 0),
+  rgba(255, 191, 0, 0.085)
+);
+$vsPink: #fb2062;
+$fontColor: black;
+
+$classicFont: '$classicFont', sans-serif;
+
+// Vertical alignment
+$navigationHeight: 6.5vh;
+$navigationMinHeight: 60px;
+$footerHeight: 20vh;
+$bodyHeight: 73.5vh;
+
+// .home-wrapper Vars
+$logoWidth: 25vw;
+$logoLeftMargin: 22.5vw;
+
+$standarWidth: 35vw;
+$leftMargin: 25%;
+
+// Home Text horizontal Alignment
+$textWidth: 20vw;
+$textMargin: 25vw;
+
+// SASS VARS EXPORT
+
+:root {
+  --themeColor: #{$themeColor};
+  --marginDivBgLeft: #{$marginDivBgLeft};
+  --marginDivBgRigth: #{$marginDivBgRight};
+  --navBarDivition: #{$vsPink};
+  --fontColor: #{$fontColor};
+}
+
+@mixin lowGradeButton {
+  background-color: #111217;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin highGradeButton {
+  background-color: #fb2062;
+  border: solid 2px #fb2062;
+  border-radius: 6px;
+  color: white;
+}
+@mixin buttonHover {
+  &:hover {
+    background-color: #fb2062;
+    color: white;
+    transition: 1s;
+  }
+}
+
+// HOME ANIMATIONS
+
+.form-Animation-0 {
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes form-Animation-0 {
+  0% {
+    transform: scale(1.0075);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.form-opacity-0 {
+  -webkit-animation-name: form-Animation-0;
+  animation-name: form-Animation-0;
+}
+// ----------- //
+.animatedOHome-1 {
+  animation-delay: 1.15s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes opacityHome-1 {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translateX(0px);
+  }
+}
+.opacityHome-1 {
+  -webkit-animation-name: opacityHome-1;
+  animation-name: opacityHome-1;
+}
+.animatedOHome-2 {
+  animation-delay: 2s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes opacityHome-2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.opacityHome-2 {
+  -webkit-animation-name: opacityHome-2;
+  animation-name: opacityHome-2;
+}
+$backgroundColor: #111217;
+.navigation-bar {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  z-index: $viewContent;
+  top: 0;
+  background: $backgroundColor;
+  width: 100%;
+  padding-top: $navigationMinHeight/3.5;
+  padding-bottom: $navigationMinHeight/3.5;
+  vertical-align: middle;
+  height: $navigationHeight;
+  min-height: $navigationMinHeight;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: var(--navBarDivition);
+  .set-theme {
+    display: none;
+    position: absolute;
+    left: 0;
+    margin-left: 25px;
+    cursor: pointer;
+    color: var(--fontColor);
+    font-size: large;
+    @keyframes theme-buttons-effect {
+      from {
+      }
+      to {
+        color: rgb(145, 145, 145);
+      }
+    }
+    &:hover {
+      -webkit-animation-duration: 0.33s;
+      animation-duration: 0.33s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      animation-name: theme-buttons-effect;
+      -webkit-animation-name: theme-buttons-effect;
+    }
+  }
+  .create-button {
+    position: absolute;
+    left: 25px;
+    height: 35px;
+    width: 150px;
+    background-color: #81c784;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .delete-button {
+    position: absolute;
+    left: 200px;
+    height: 35px;
+    width: 150px;
+    background-color: #c79181;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .export-button {
+    position: absolute;
+    left: 375px;
+    height: 35px;
+    width: 175px;
+    background-color: #8194c7;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .organizer-title {
+    font-size: 32px;
+    line-height: $navigationHeight;
+    margin: 0px;
+    height: $navigationHeight;
+    position: absolute;
+    right: 5.83vw;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+  }
+  a {
+    position: relative;
+    cursor: pointer;
+    color: var(--fontColor);
+    font-size: large;
+    //line-height: $navigationMinHeight/8;
+    font-family: 'Cinzel', serif;
+    //font-size: large;
+    @keyframes nav-buttons-effect {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.3);
+        color: $vsPink;
+      }
+    }
+    &:nth-of-type(2) {
+      margin-left: 20vw;
+    }
+    &:nth-of-type(3) {
+      margin-left: 15vw;
+    }
+    &:nth-of-type(4) {
+      margin-left: 15vw;
+    }
+    &:nth-of-type(5) {
+      margin-left: 15vw;
+    }
+    &:hover {
+      -webkit-animation-duration: 0.33s;
+      animation-duration: 0.33s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      animation-name: nav-buttons-effect;
+      -webkit-animation-name: nav-buttons-effect;
+    }
+  }
+  .sing-in {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: large;
+    line-height: $navigationHeight;
+    margin-right: 150px;
+    @keyframes sing-button-effect {
+      from {
+      }
+      to {
+        color: $goldSingIn;
+      }
+    }
+    &:hover {
+      -webkit-animation-duration: 0.33s;
+      animation-duration: 0.33s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      animation-name: sing-button-effect;
+      -webkit-animation-name: sing-button-effect;
+    }
+  }
+  .nav-register {
+    cursor: pointer;
+    line-height: 0;
+    margin: 5%;
+  }
+  #login-button {
+    display: none;
+  }
+  #modal1 {
+    background-color: white;
+    overflow: 'hidden';
+    width: 60%;
+    height: 100%;
+    top: 0px;
+    #modal-content {
+      overflow: 'hidden';
+      background-color: white;
+      #register-wrapper {
+        color: black;
+        line-height: 22px;
+      }
+      #login-wrapper {
+        color: black;
+        line-height: 22px;
+        pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap; //mozilla
+          white-space: -pre-wrap; //opera 4-6
+          white-space: -o-pre-wrap; // opera 7
+          white-space: break-word; // explorer
+        }
+        .card {
+          background: white;
+          border-radius: 2px;
+          display: inline-block;
+          margin-right: 2em;
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+            0 15px 12px rgba(0, 0, 0, 0.22);
+          transition: all ease-in-out 0.6s;
+        }
+        .card:hover {
+          transform: translateY(-10px);
+        }
+        .window {
+          width: 80%;
+          margin: 0 auto;
+          background: white;
+          border-radius: 6px;
+        }
+      }
+    }
+    #modal-footer {
+      background-color: white;
+    }
+  }
+  #modal1::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #modal1::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+  }
+  #modal1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  }
+}
+#validate-admin {
+  margin-top: 75px;
+  margin-left: 75px;
+  width: 500px;
+  height: 500px;
+  .label-admin-token {
+    width: 100px;
+    height: 30px;
+    margin-right: 30px;
+  }
+  .admin-token {
+    width: 100px;
+    height: 30px;
+    margin-right: 30px;
+  }
+}
+.content-wrapper {
+  position: absolute;
+  z-index: $viewIndex;
+  width: 100%;
+  height: 100vh - $navigationHeight;
+  margin: 0 auto;
+  overflow-y: scroll;
+  min-width: 1600px;
+  min-height: 835px;
+  background-color: transparent;
+  opacity: 1;
+  overflow: scroll;
+  .tournament-panel-bg {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh - $navigationHeight;
+    min-width: 1600px;
+    background: radial-gradient(
+      circle,
+      #fb2062 0%,
+      transparent 37%,
+      transparent 47%,
+      transparent 51%,
+      transparent 59%,
+      transparent 100%
+    );
+    $borderRadius: 15px;
+    $borderColor: #01579b;
+    .tournament-panel-content-wrapper {
+      .organizer-buttons {
+        position: absolute;
+        left: 25px;
+        top: 50px;
+        margin: 25px !important;
+        width: 883px;
+        height: 750px;
+        //background-color: rgba(17, 18, 23 , 0.75);
+        padding: 25px;
+        .days-labels {
+          position: absolute !important;
+          top: 0px !important;
+          width: 883px !important;
+          height: 20px !important;
+          line-height: 20px !important;
+          font-size: 16px !important;
+          color: white !important;
+          font-family: $classicFont !important;
+          border: none !important;
+          background: transparent !important;
+          &:hover {
+            transform: none !important;
+          }
+          span {
+            width: 400px !important;
+            margin: 0 42.75px;
+            margin-top: 50px;
+          }
+        }
+        div {
+          cursor: pointer;
+          position: relative;
+          display: inline-block;
+          box-shadow: none;
+          border: none;
+          margin: 2.5px !important;
+          width: 114px;
+          height: 75px;
+          font-family: $classicFont;
+          font-size: 14px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          color: white;
+          transition: 0.5s;
+          @include lowGradeButton();
+          @include buttonHover();
+          &:hover {
+            transition: 0.5s;
+            transform: scale(1.05);
+          }
+          .button-label {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            //background-color: white;
+            line-height: 32.5px;
+            text-align: center;
+            color: #212433;
+            border-radius: 15px;
+            font-size: 11px;
+            width: 32.5px;
+            height: 32.5px;
+            pointer-events: none;
+          }
+        }
+        .itsClicked {
+          box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+          background-color: rgba(251, 32, 98, 0.75) !important;
+        }
+        .none {
+          border: 2px solid rgba(251, 32, 98, 1) !important ;
+        }
+        .initial {
+          border: 2px solid #3495eb !important ;
+        }
+        .panel-button.initial {
+          background-color: #3495eb !important;
+          border: 2px solid #3495eb;
+        }
+        .panel-button.initial-userClicked {
+          background-color: #3495eb !important;
+          border: 3px solid rgba(251, 32, 98, 0.75) !important ;
+          box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+        }
+        .mid {
+          border: 2px solid #ffb74d !important ;
+        }
+        .panel-button.mid {
+          background-color: #ffb74d !important ;
+          border: 2px solid #ffb74d !important ;
+        }
+        .panel-button.mid-userClicked {
+          background-color: #ffb74d !important;
+          border: 3px solid rgba(251, 32, 98, 0.75) !important ;
+          box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+        }
+        .final {
+          border: 2px solid #497039 !important;
+        }
+        .panel-button.final {
+          background-color: #497039 !important;
+          border: 2px solid #497039 !important;
+        }
+        .panel-button.final-userClicked {
+          background-color: #497039 !important;
+          border: 3px solid rgba(251, 32, 98, 0.75) !important ;
+          box-shadow: 2px solid rgba(251, 32, 98, 0.75) !important;
+        }
+        .panel-button.fix {
+          border-color: grey !important;
+          background-color: grey !important;
+        }
+      }
+    }
+  }
+  .organizer-panel {
+    position: relative;
+    //align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    min-width: inherit;
+    background-color: $backgroundColor;
+    $borderRadius: 15px;
+    $borderColor: #fb2062;
+    .tournament-card {
+      $minCardWidth: 452.5px;
+      $margin-top: 40px;
+      position: relative;
+      float: left;
+      height: 542px;
+      margin-top: 15px;
+      margin-left: 0.83vw;
+      margin-right: 0.83vw;
+      min-width: $minCardWidth;
+      background-color: transparent;
+      //Nav Card Buttons
+      $buttonsRadius: 10px;
+      $buttonHeight: 35px;
+      $bottomPadding: 5px;
+      $buttonsBg: rgba(251, 32, 98, 0.7);
+      $buttonHoverBg: $borderColor;
+      $buttonWidth: 75px;
+      $cardMargin: 0px;
+      .tournament-format {
+        cursor: pointer;
+        color: rgba(251, 32, 98, 0.7);
+        position: absolute;
+        right: 0px;
+        height: $buttonHeight;
+        line-height: $buttonHeight;
+        font-size: 16px;
+        font-family: $classicFont;
+        transition: 0.5s;
+        &:hover {
+          transition: 0.5s;
+          color: rgb(251, 32, 98);
+        }
+      }
+      .info-wrapper {
+        //button
+        cursor: pointer;
+        position: relative;
+        width: $buttonWidth;
+        height: $buttonHeight;
+        padding-bottom: $bottomPadding;
+        top: 0px;
+        margin-right: 5px;
+        margin-bottom: 0px !important;
+        border-top-right-radius: $buttonsRadius;
+        border-top-left-radius: $buttonsRadius;
+        //border-color:  $buttonsBg;
+        background-color: $buttonsBg;
+        border: none;
+        &:hover {
+          border-top-color: $buttonHoverBg;
+          border-left-color: $buttonHoverBg;
+          border-right-color: $buttonHoverBg;
+          background-color: $buttonHoverBg;
+        }
+        i {
+          color: white;
+          line-height: $buttonHeight !important;
+        }
+      }
+      .info-state {
+        // Button
+        cursor: pointer;
+        position: relative;
+        width: $buttonWidth;
+        height: $buttonHeight;
+        padding-bottom: $bottomPadding;
+        left: $cardMargin;
+        top: 0px;
+        margin-right: 5px;
+        margin-bottom: 0px !important;
+        border-top-right-radius: $buttonsRadius;
+        border-top-left-radius: $buttonsRadius;
+        //border-color:  $buttonsBg;
+        background-color: $buttonsBg;
+        border: none;
+        &:hover {
+          border-top-color: $buttonHoverBg;
+          border-left-color: $buttonHoverBg;
+          border-right-color: $buttonHoverBg;
+          background-color: $buttonHoverBg;
+        }
+        i {
+          color: white;
+          line-height: $buttonHeight !important;
+        }
+      }
+      .info-chat {
+        //Button
+        cursor: pointer;
+        position: relative;
+        width: $buttonWidth;
+        height: $buttonHeight;
+        padding-bottom: $bottomPadding;
+        left: $cardMargin;
+        top: 0px;
+        margin-right: 5px;
+        margin-bottom: 0px !important;
+        border-top-right-radius: $buttonsRadius;
+        border-top-left-radius: $buttonsRadius;
+        //border-color:  $buttonsBg;
+        background-color: $buttonsBg;
+        border: none;
+        &:hover {
+          border-top-color: $buttonHoverBg;
+          border-left-color: $buttonHoverBg;
+          border-right-color: $buttonHoverBg;
+          background-color: $buttonHoverBg;
+        }
+        i {
+          color: white;
+          line-height: $buttonHeight !important;
+        }
+      }
+      .selected {
+        cursor: auto;
+        background: $borderColor;
+        &:hover {
+          background: $borderColor;
+        }
+      }
+      .tournaments-tittle {
+        text-align: left;
+        position: relative;
+        width: inherit;
+        margin: 0px !important;
+        min-width: $minCardWidth;
+        border-radius: $borderRadius;
+        border: 3px solid rgba(251, 32, 98, 1);
+        border-bottom: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        background: rgba(251, 32, 98, 1);
+        //border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        color: white;
+        font-size: 19px;
+        line-height: 42px;
+        padding-left: 5px;
+        height: 42px;
+        z-index: 1000;
+        font-family: 'Orbitron', sans-serif;
+      }
+      $mainComponentsWidth: inherit;
+      $mainComponentsMinWidth: inherit;
+      $mainComponentsHeight: 465px;
+      $mainBackground: rgba(251, 32, 98, 0.15);
+      .tournament-info-wrapper {
+        margin: 0px !important;
+        border-radius: $borderRadius;
+        border: 3px solid $borderColor;
+        border-top: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        position: absolute;
+        left: 0;
+        margin-left: $cardMargin;
+        margin-right: $cardMargin;
+        width: $minCardWidth;
+        height: $mainComponentsHeight;
+        background: $mainBackground;
+        p {
+          position: relative;
+          display: inline-block;
+          margin: 6px 0px;
+          margin-left: 18px;
+          margin-right: 18px;
+          width: $minCardWidth - 40px;
+          vertical-align: middle;
+          border: none;
+          border-radius: 3px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 19px;
+          font-family: $classicFont;
+          outline: 1px solid rgb(251, 32, 98);
+          &:nth-of-type(1) {
+            margin-top: 15px;
+          }
+          .tournament-index {
+            font-size: 19px;
+            color: rgba(245, 136, 169, 0.85);
+          }
+          .tournament-data {
+            font-size: 19px;
+            color: #d2d1d6;
+          }
+        }
+        input {
+          position: relative;
+          display: inline-block;
+          color: white;
+          margin: 6px 0px;
+          margin-left: 18px;
+          margin-right: 18px;
+          width: $minCardWidth - 40px !important;
+          height: 30px;
+          padding: 0px !important;
+          line-height: 30px !important;
+          border: none !important;
+          font-size: 19px;
+          font-family: $classicFont;
+          outline: 1px solid rgb(251, 32, 98);
+          &:nth-of-type(1) {
+            margin-top: 15px;
+          }
+          &:focus-within {
+            box-shadow: 0px !important;
+            border: 0px !important;
+            outline: 0px !important;
+          }
+          &:focus {
+            box-shadow: 0px !important;
+            border: 0px !important;
+            outline: 0px !important;
+          }
+        }
+        .footer-buttons {
+          position: absolute;
+          display: inline-block;
+          margin: 0 15px;
+          width: $minCardWidth - 30px;
+          left: -4px;
+          height: 60px;
+          bottom: 25px;
+          $fButtonHeight: 40px;
+          .delete-button {
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 30%;
+            margin-left: 2.5%;
+            //min-width: 140px;
+            height: $fButtonHeight;
+            line-height: $fButtonHeight;
+            color: white;
+            background-color: transparent;
+            outline: 0.5px solid $borderColor;
+            border: none !important;
+            font-size: 16px;
+            font-family: $classicFont;
+            transition: 0.5s;
+            &:hover {
+              transition: 0.5s;
+              background-color: $borderColor;
+            }
+          }
+          .edit-button {
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 30%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            height: $fButtonHeight;
+            line-height: $fButtonHeight;
+            font-size: 16px;
+            color: white;
+            background-color: transparent;
+            outline: 0.5px solid $borderColor;
+            border: none !important;
+            font-family: $classicFont;
+            transition: 0.5s;
+            &:hover {
+              transition: 0.5s;
+              background-color: $borderColor;
+            }
+          }
+          .enrolled-players {
+            cursor: normal;
+            position: relative;
+            float: left;
+            width: 30%;
+            //min-width: 140px;
+            margin-right: 2.5%;
+            height: $fButtonHeight;
+            line-height: $fButtonHeight + 2px;
+            font-size: 20px;
+            color: #56cf2d;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgba(1, 1, 1, 0.35);
+            font-weight: 100;
+            font-family: $classicFont;
+          }
+          // EDIT PANEL CONTEXT
+          .confirm-button {
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 30%;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            height: $fButtonHeight;
+            line-height: $fButtonHeight;
+            font-size: 16px;
+            color: white;
+            background-color: transparent;
+            outline: 0.5px solid $borderColor;
+            border: none !important;
+            font-family: $classicFont;
+            transition: 0.5s;
+            &:hover {
+              transition: 0.5s;
+              background-color: $borderColor;
+            }
+          }
+          .cancel-button {
+            cursor: pointer;
+            position: relative;
+            float: left;
+            width: 30%;
+            margin-left: 2.5%;
+            //min-width: 140px;
+            height: $fButtonHeight;
+            line-height: $fButtonHeight;
+            color: white;
+            background-color: transparent;
+            outline: 0.5px solid $borderColor;
+            border: none !important;
+            font-size: 16px;
+            font-family: $classicFont;
+            transition: 0.5s;
+            &:hover {
+              transition: 0.5s;
+              background-color: $borderColor;
+            }
+          }
+        }
+        ::placeholder {
+          color: rgb(175, 175, 175);
+          font-family: 'Julius Sans One', sans-serif;
+        }
+      }
+      .tournament-state {
+        //Wrapper
+        margin: 0px !important;
+        border-radius: $borderRadius;
+        border: 3px solid $borderColor;
+        border-top: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        position: absolute;
+        left: 0;
+        width: $mainComponentsWidth;
+        margin-left: $cardMargin;
+        margin-right: $cardMargin;
+        min-width: $mainComponentsMinWidth;
+        height: $mainComponentsHeight;
+        background: $mainBackground;
+        // Image Vars
+        $tImgTop: 50px;
+        $tImgLeft: 25px;
+        $tImgWidth: 352px;
+        $tImgHeight: 198px;
+        $tImgOpacity: 1;
+        $tImgIndex: 500;
+        $tImgBorder: 5px solid $borderColor;
+        .tournament-image {
+          position: absolute;
+          top: $tImgTop;
+          left: $tImgLeft;
+          width: $tImgWidth;
+          height: $tImgHeight;
+          opacity: $tImgOpacity;
+          z-index: $tImgIndex;
+          //border: $tImgBorder;
+          border-radius: $borderRadius;
+        }
+        .tournament-img-bg {
+          position: absolute;
+          top: $tImgTop;
+          left: $tImgLeft;
+          width: $tImgWidth;
+          height: $tImgHeight;
+          opacity: $tImgOpacity;
+          z-index: $tImgIndex * 1.5;
+          border: $tImgBorder;
+          border-radius: $borderRadius;
+          background-color: rgba(1, 1, 1, 0.75);
+          .tournamen-message {
+            width: 352px;
+            height: 198px;
+            font-size: 20px;
+            color: rgba(200, 200, 200, 0.8);
+          }
+        }
+        .edit-text {
+          position: absolute;
+          top: 255px;
+          left: 50px;
+          width: 90px;
+        }
+        .close-inscription-button {
+          position: absolute;
+          bottom: 25px;
+          left: 25px;
+          width: 100px;
+          height: 60px;
+        }
+        .start-tournament-button {
+          position: absolute;
+          bottom: 25px;
+          left: 150px;
+          width: 100px;
+          height: 60px;
+        }
+        .tournament-state-label {
+          position: absolute;
+          bottom: 25px;
+          left: 380px;
+          width: 150px;
+          height: 60px;
+          font-size: large;
+          color: green;
+        }
+      }
+      .tournament-chat-wrapper {
+        margin: 0px !important;
+        border-radius: $borderRadius;
+        border: 3px solid $borderColor;
+        border-top: 0px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        position: absolute;
+        left: 0;
+        width: $mainComponentsWidth;
+        margin-left: $cardMargin;
+        margin-right: $cardMargin;
+        min-width: $mainComponentsMinWidth;
+        height: $mainComponentsHeight;
+        background: $mainBackground;
+        i {
+          height: 0px;
+          width: 0px;
+        }
+        .chat-button {
+          position: absolute;
+          cursor: pointer;
+          border: none !important;
+          background: transparent;
+          color: $borderColor;
+          top: 105px;
+          left: 5px;
+          width: 90px;
+          height: 60px;
+          z-index: 1000;
+          outline: 0.5px solid $borderColor;
+        }
+        $contentWidth: 300px;
+        $contentMinWidth: 300px;
+        $contentHeight: 415px;
+        $topContent: 35px;
+        .chat-wrapper {
+          $box-decoration-1: rgba(251, 32, 98, 0.15);
+          $box-decoration-2: rgba(251, 32, 98, 0.25);
+          $box-decoration-3: rgba(251, 32, 98, 0.15);
+          position: absolute;
+          top: $topContent;
+          right: 0;
+          width: $contentWidth;
+          min-width: $contentMinWidth;
+          height: $contentHeight;
+          //min-height: 795px;
+          background: transparent;
+          //background: linear-gradient(0deg, $box-decoration-1, $box-decoration-2, $box-decoration-1,);
+          border-radius: 15px;
+          .message-input {
+            position: absolute;
+            left: 0px;
+            bottom: 2.5px;
+            margin: 0;
+            margin-left: 1.25%;
+            padding-left: 8px;
+            background-color: rgba(1, 1, 1, 0.65);
+            border-color: $box-decoration-1;
+            border-radius: 10px;
+            height: 32px;
+            width: 65%;
+            color: aliceblue;
+            border: 0px;
+            &:focus {
+              outline: none;
+              background-color: rgba(25, 25, 25, 0.5);
+              transition: 1.75s;
+            }
+            &:hover {
+              background-color: rgba(25, 25, 25, 0.5);
+              transition: 1.75s;
+            }
+          }
+          ::placeholder {
+            color: rgba(175, 175, 175, 0.75);
+            // padding-left: 4px;
+          }
+          .send-button {
+            position: absolute;
+            bottom: 3px;
+            left: 68.75%;
+            height: 31px;
+            line-height: 31px;
+            width: 30%;
+            margin-left: 0.5%;
+            text-align: center;
+            border-radius: 20px;
+            font-size: 16px;
+            font-family: 'Passion One', cursive;
+            background-color: $box-decoration-2;
+            transition: 1s;
+            &:hover {
+              background-color: #01579b;
+              transition: 1.75s;
+            }
+          }
+          .chat-tittle {
+            display: none;
+            height: 3vh;
+            min-height: 21.6px;
+            color: #f1f8e9;
+            font-size: 20px;
+            width: 400px;
+            margin-left: 120px;
+          }
+          .chat-box::-webkit-scrollbar {
+            width: 16px;
+          }
+          .chat-box::-webkit-scrollbar-track {
+            background: linear-gradient(
+              rgba(180, 255, 0, 0.015),
+              rgba(180, 255, 0, 0.025)
+            );
+          }
+          .chat-box::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: rgba(3, 169, 244, 0.35);
+            opacity: 0.1;
+            //border: 0.05em solid #eeeeee;
+          }
+          .chat-box::-webkit-scrollbar-thumb:hover {
+            background: rgba(3, 169, 244, 0.45);
+          }
+          .chat-box::-webkit-scrollbar-thumb:active {
+            background: rgba(3, 169, 244, 0.65);
+          }
+          .chat-box::-webkit-scrollbar-button {
+            border-style: solid;
+            height: 16px;
+            width: 16px;
+          }
+          .chat-box::-webkit-scrollbar-button:vertical:decrement {
+            height: 0px;
+            border-width: 0 7px 14px 7px;
+            border-color: transparent transparent rgba(40, 100, 40, 0)
+              transparent;
+          }
+          .chat-box::-webkit-scrollbar-button:vertical:decrement:hover {
+            border-color: transparent transparent rgb(180, 180, 180) transparent;
+          }
+          .chat-box::-webkit-scrollbar-button:vertical:increment {
+            height: 0px;
+            border-width: 14px 7px 0 7px;
+            border-color: rgba(40, 100, 40, 0) transparent transparent
+              transparent;
+          }
+          .chat-box::-webkit-scrollbar-button:vertical:increment:hover {
+            border-color: rgb(180, 180, 180) transparent transparent transparent;
+          }
+          .chat-box {
+            position: absolute;
+            display: block;
+            width: 100%;
+            bottom: 36px;
+            right: 0px;
+            height: 350px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background: rgba(1, 1, 1, 0.1);
+            //border: 1px solid linear-gradient(0deg, $box-decoration, #01579b);
+            .div-para {
+              position: relative;
+              margin-top: 10px;
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+              }
+              .picture-player {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                white-space: inherit;
+                height: 35px;
+                width: 35px;
+                margin-left: 7.5px;
+                border-radius: 30px;
+                margin-right: 10px;
+                margin-bottom: 0px;
+                margin-top: 3px;
+              }
+              label {
+                position: absolute;
+                top: 0px;
+                right: 0;
+                margin-top: 5px;
+                margin-right: 10px;
+                color: rgba(55, 55, 55, 0.35);
+              }
+              .user-name {
+                float: left;
+                width: 365px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                color: rgba(60, 150, 60, 0.85);
+                white-space: inherit;
+                overflow: hidden;
+                padding-left: 45px;
+                line-height: 20px;
+                font-size: 15px;
+              }
+              .message-history {
+                color: rgba(55, 55, 55, 0.85);
+                width: 370px;
+                white-space: inherit;
+                overflow: hidden;
+                padding-left: 45px;
+                margin-right: 7.5px;
+                margin-top: 4px;
+                margin-bottom: 3.75px;
+                line-height: 20px;
+                font-size: 15px;
+                //background-color: rgba(255,255,255, 0.0125);
+              }
+            }
+          }
+          .loading-img {
+            width: 75px;
+            height: 75px;
+            margin-left: 160px;
+            margin-top: 310px;
+            opacity: 0.4;
+          }
+        }
+        .validate-results {
+          cursor: pointer;
+          position: absolute;
+          border: none !important;
+          background: transparent;
+          color: $borderColor;
+          top: 35px;
+          left: 5px;
+          width: 90px;
+          height: 60px;
+          outline: 0.5px solid $borderColor;
+        }
+        .validate-results-div {
+          $box-decoration-1: rgba(251, 32, 98, 0.25);
+          $box-decoration-2: rgba(251, 32, 98, 0.15);
+          $box-decoration-3: rgba(251, 32, 98, 0.25);
+          margin: 0 auto !important;
+          position: absolute;
+          top: $topContent;
+          right: 0px;
+          overflow-y: scroll;
+          color: white;
+          //width: 17.5vw;
+          width: $contentWidth;
+          min-width: $contentMinWidth;
+          height: $contentHeight;
+          //min-height: 795px;
+          background: linear-gradient(
+            0deg,
+            $box-decoration-1,
+            $box-decoration-2,
+            $box-decoration-1
+          );
+          border-radius: 5px;
+          .bracket {
+            position: relative;
+            width: 100%;
+            height: 25px;
+            background-color: rgba(1, 1, 1, 0.3);
+            margin-top: 2.5px;
+            transition: 0.25s;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.3);
+              transition: 0.25s;
+            }
+            .playerA {
+              position: absolute;
+              left: 0px;
+              top: 0px;
+              font-size: 20px;
+              color: yellow;
+              z-index: 1005px;
+            }
+            .playerB {
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              float: right;
+              font-size: 20px;
+              color: yellow;
+              z-index: 1005px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.content-wrapper::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.content-wrapper::-webkit-scrollbar-thumb {
+  width: 0px;
+  height: 0px;
+}
+.content-wrapper::-webkit-scrollbar-track {
+  width: 0px;
+  height: 0px;
+}

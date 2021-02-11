@@ -1,0 +1,41 @@
+$viewIndex: 25;
+$viewContent: 40;
+$whidthLimit: 5vw;
+$min-height-Mdivs: 673.2px;
+$min-width-Mdivs: 120px;
+
+.lol-organizer-wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  min-width: 1600px;
+  //min-height: 900px;
+  z-index: $viewIndex;
+  background-color: #111217;
+  overflow: none;
+  @import '../_game-template/game-organizer.scss';
+  //@include small;
+  .left-div {
+    position: absolute;
+    left: 0;
+    z-index: $viewIndex * -2;
+    width: $whidthLimit;
+    height: inherit;
+    min-height: inherit;
+    min-width: $min-width-Mdivs;
+    background: var(--marginDivBgLeft);
+  }
+  .rigth-div {
+    position: absolute;
+    right: 0;
+    z-index: $viewIndex * -2;
+    width: $whidthLimit;
+    height: inherit;
+    min-height: inherit;
+    min-width: $min-width-Mdivs;
+    background-color: $themeColor;
+    background: var(--marginDivBgRigth);
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "fifa20": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/v1595301190/Statics_images/out2.0/o3gjo7qp0nlwbydk7kzc.jpg",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1595304930/Statics_images/PerTournament2.0/x1vqbmcc9nzlas9madya.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "FIFA 20",
+    "teamsSize": 1,
+    "enrollData": {
+      "field1": "Playstation ID"
+    }
+  },
+  "pes20": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/c_crop,e_improve,g_center,x_13,y_-1/v1595301191/Statics_images/out2.0/lzyk0w1fhqx6ce2eqobn.jpg",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1595304930/Statics_images/PerTournament2.0/g9fov8mlri08qr3mz8dg.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "PES 2020",
+    "teamsSize": 1,
+    "enrollData": {
+      "field1": "Nickname"
+    }
+  },
+  "GT": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/c_fill,w_429/v1599819622/Statics_images/rhodh42aj9vdsnbgsusw.png",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1595304936/Statics_images/PerTournament2.0/vgwndgkptk5rqrfd5wq9.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "Gran Turismo",
+    "teamsSize": 1,
+    "enrollData": {
+      "field1": "Playstation ID"
+    }
+  },
+  "lol": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/c_thumb,g_north_west/v1595301190/Statics_images/out2.0/oi94ntgq83boxdwhgey3.jpg",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1595304930/Statics_images/PerTournament2.0/fm9ll4o0lsdgzbjzmzqr.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "League Of Legends",
+    "teamsSize": 8,
+    "enrollData": {
+      "field1": "Team Enroll"
+    }
+  },
+  "mobileL": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/v1595301190/Statics_images/out2.0/xzbvyhgojlauvogjymbi.jpg",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1595304930/Statics_images/PerTournament2.0/kwn0o7y6kcu1o8kzzuvc.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "Mobile Legends",
+    "teamsSize": 6,
+    "enrollData": {
+      "field1": "Team Enroll"
+    }
+  },
+  "NBA2K": {
+    "defaultImg": "https://res.cloudinary.com/versus/image/upload/v1595301190/Statics_images/out2.0/zt5ox3d6tpsmuokbrxqn.jpg",
+    "organizerDefaultImg": "https://res.cloudinary.com/versus/image/upload/v1594981396/Statics_images/bbywdvsonwj3rjrgz5sz.jpg",
+    "news": "the new champ is ready to pick",
+    "offer": "get the new ward skin on our store",
+    "responseData": {},
+    "displayName": "NBA 2K20",
+    "teamsSize": 1,
+    "enrollData": {
+      "field1": "Team Enroll"
+    }
+  }
+}
